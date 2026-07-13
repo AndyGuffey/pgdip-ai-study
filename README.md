@@ -1,8 +1,9 @@
-# PGDip Study Code — Retrieval-Augmented Generation (RAG)
+# PGDip Study Code — RAG & LLM Security
 
-Running collection of study scripts exploring vector search, embeddings, and
-Retrieval-Augmented Generation (RAG), roughly ordered by week/day as covered
-in the course (`w2_d4`, `w3_d1`, `w3_d2`, `w3_d3`, ...).
+Running collection of study scripts exploring vector search, embeddings,
+Retrieval-Augmented Generation (RAG), and LLM security, roughly ordered by
+week/day as covered in the course (`w2_d4`, `w3_d1`, `w3_d2`, `w3_d3`,
+`w3_d4`, `w4_d1`, ...).
 
 ## Topics by file
 
@@ -65,6 +66,21 @@ in the course (`w2_d4`, `w3_d1`, `w3_d2`, `w3_d3`, ...).
   printing the prompt instead of calling the API if no key is set. Requires
   an OpenAI API key.
 
+### LLM security: prompt injection
+- **[w4_d1_local_llm_injection.py](w4_d1_local_llm_injection.py)** —
+  Demonstrates a **vulnerable** prompt design against a local `gpt2` model
+  (loaded via `transformers`): a "secret" is embedded directly in a plain-text
+  prompt with no role separation, so it can potentially be leaked through
+  prompt injection in the interactive chat loop. Intended as a security
+  anti-pattern to study, not a template to copy.
+- **[w4_d1_openai_safe.py](w4_d1_openai_safe.py)** — The same "don't reveal
+  the secret code" scenario, but built on OpenAI's chat completions API using
+  a proper `system` role instead of concatenating everything into one prompt
+  string. Useful for comparing role-separated prompting against the naive
+  approach in `w4_d1_local_llm_injection.py` — note that a system prompt
+  alone is still not a complete defense against injection. Requires an
+  OpenAI API key.
+
 ## Setup
 
 A virtual environment is already set up in `.venv`. To install/update
@@ -90,16 +106,21 @@ langchain-huggingface
 faiss-cpu
 chromadb        # w2_d4_vector_db_example3.py only
 langchain-openai  # w3_d1_rag_demo.py and w3_d2_rag2_demo.py only
-openai            # w3_d4_demo.py only (uses the OpenAI SDK directly)
+openai            # w3_d4_demo.py and w4_d1_openai_safe.py (uses the OpenAI SDK directly)
+transformers      # w4_d1_local_llm_injection.py only (local gpt2 model)
 ```
 
 ### API keys
 
-`w3_d1_rag_demo.py`, `w3_d2_rag2_demo.py`, and `w3_d4_demo.py` call the
-OpenAI API and expect a key in the `my_api_key` / `api_key` variable at the
-top of the file. **Do not commit real API keys.** Prefer setting
-`OPENAI_API_KEY` as an environment variable or loading it from a `.env` file
-(untracked) instead of hardcoding it before pushing this repo to GitHub.
+`w3_d1_rag_demo.py`, `w3_d2_rag2_demo.py`, `w3_d4_demo.py`, and
+`w4_d1_openai_safe.py` call the OpenAI API and expect a key in the
+`my_api_key` / `api_key` variable at the top of the file. **Do not commit
+real API keys.** Prefer setting `OPENAI_API_KEY` as an environment variable
+or loading it from a `.env` file (untracked) instead of hardcoding it before
+pushing this repo to GitHub.
+
+`w4_d1_local_llm_injection.py` runs entirely locally (downloads `gpt2` via
+`transformers` on first run) and needs no API key.
 
 ## Running a script
 
