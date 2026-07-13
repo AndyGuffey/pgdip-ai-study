@@ -90,3 +90,17 @@ pushing this repo to GitHub.
 ```bash
 ./.venv/bin/python w3_d3_rag3_simple_rerank.py
 ```
+
+## AI usage declaration
+
+AI assistance (Claude, via Claude Code) was used in preparing this repo, specifically for:
+
+- Writing the per-file summaries in the "Topics by file" section above, based on reading the existing scripts.
+- Generating `requirements.txt` from the project's installed dependencies.
+- Installing project dependencies (matplotlib) into the local virtual environment.
+- Initializing the git repository and creating/pushing this GitHub repo.
+
+The Python scripts themselves are the author's own study work from the PGDip course.
+AI was not used to write or modify the code in the `.py` files, and was not used to
+generate or handle any real API keys or credentials — the `my_api_key` placeholders
+are intentionally left blank (see the API keys note above).
