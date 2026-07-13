@@ -3,7 +3,7 @@
 Running collection of study scripts exploring vector search, embeddings,
 Retrieval-Augmented Generation (RAG), and LLM security, roughly ordered by
 week/day as covered in the course (`w2_d4`, `w3_d1`, `w3_d2`, `w3_d3`,
-`w3_d4`, `w4_d1`, ...).
+`w3_d4`, `w4_d1`, `w4_d4`, ...).
 
 ## Topics by file
 
@@ -66,7 +66,7 @@ week/day as covered in the course (`w2_d4`, `w3_d1`, `w3_d2`, `w3_d3`,
   printing the prompt instead of calling the API if no key is set. Requires
   an OpenAI API key.
 
-### LLM security: prompt injection
+### LLM security: prompt injection & fuzzing
 - **[w4_d1_local_llm_injection.py](w4_d1_local_llm_injection.py)** —
   Demonstrates a **vulnerable** prompt design against a local `gpt2` model
   (loaded via `transformers`): a "secret" is embedded directly in a plain-text
@@ -80,6 +80,14 @@ week/day as covered in the course (`w2_d4`, `w3_d1`, `w3_d2`, `w3_d3`,
   approach in `w4_d1_local_llm_injection.py` — note that a system prompt
   alone is still not a complete defense against injection. Requires an
   OpenAI API key.
+- **[w4_d4_prompt_fuzzing_script.py](w4_d4_prompt_fuzzing_script.py)** —
+  Prompt fuzzing: a batch of known injection/jailbreak strings (system
+  prompt extraction, instruction override, "ignore restrictions", etc.) run
+  through an LLM in a loop so responses can be reviewed for guardrail
+  failures, rather than testing one attack prompt at a time. **Note:** this
+  is a snippet that calls a `run_llm(...)` function which isn't defined in
+  the file — wire it up to one of the `ask_llm` / `ask_local_llm` functions
+  from the `w4_d1_*` scripts (or your own) before running it.
 
 ## Setup
 
