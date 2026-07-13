@@ -7,21 +7,33 @@ week/day as covered in the course (`w2_d4`, `w3_d1`, `w3_d2`, `w3_d3`,
 
 ## Topics by file
 
-### Chunking & embeddings
+Click a topic to expand it and see the file-by-file details.
+
+<details>
+<summary><strong>Chunking & embeddings</strong></summary>
+
 - **[d3_chunk_demo.py](d3_chunk_demo.py)** — Standalone demo of the first half
   of a RAG pipeline: word-based chunking with overlap, embedding chunks with
   `sentence-transformers`, and cosine-similarity search over the resulting
   vectors. No vector database or LLM involved — good for seeing chunking and
   semantic search in isolation.
 
-### Vector databases
+</details>
+
+<details>
+<summary><strong>Vector databases</strong></summary>
+
 - **[w2_d4_vector_db_example3.py](w2_d4_vector_db_example3.py)** — Using
   ChromaDB as a vector store: embedding + storing documents with rich
   metadata, querying with relevance scoring, filtering results by an
   access-control field (`sensitivity`), and sharding a collection across
   multiple ChromaDB collections for scale.
 
-### RAG basics (RAG 1.0)
+</details>
+
+<details>
+<summary><strong>RAG basics (RAG 1.0)</strong></summary>
+
 - **[w3_d1_rag_example_1.py](w3_d1_rag_example_1.py)** — Minimal RAG example:
   embed a few sentences with `HuggingFaceEmbeddings`, store them in FAISS,
   and retrieve the top matches for a query. Retrieval only, no generation.
@@ -30,14 +42,22 @@ week/day as covered in the course (`w2_d4`, `w3_d1`, `w3_d2`, `w3_d3`,
   vector store → retriever → OpenAI LLM (`gpt-4o-mini`) → generated,
   source-traceable answer. Requires an OpenAI API key.
 
-### Hybrid retrieval (RAG 2.0)
+</details>
+
+<details>
+<summary><strong>Hybrid retrieval (RAG 2.0)</strong></summary>
+
 - **[w3_d2_rag2_demo.py](w3_d2_rag2_demo.py)** — Combines sparse keyword
   search (BM25) with dense vector search (FAISS) into a simple hybrid
   retriever, compares results from each method side by side, then feeds the
   merged context to an OpenAI LLM for answer generation. Requires an OpenAI
   API key.
 
-### Reranking & graph retrieval (RAG 3.0)
+</details>
+
+<details>
+<summary><strong>Reranking & graph retrieval (RAG 3.0)</strong></summary>
+
 - **[w3_d3_rag3_reranking_ex.py](w3_d3_rag3_reranking_ex.py)** — Smallest
   possible reranking example: score a fixed list of retrieved documents
   against a query using a `CrossEncoder` and print them in relevance order.
@@ -51,7 +71,11 @@ week/day as covered in the course (`w2_d4`, `w3_d1`, `w3_d2`, `w3_d3`,
   string, and renders the knowledge graph with the retrieved nodes
   highlighted (saved to `rag3_simple.png`).
 
-### Confidence-gated RAG with citations (RAG 4.0)
+</details>
+
+<details>
+<summary><strong>Confidence-gated RAG with citations (RAG 4.0)</strong></summary>
+
 - **[w3_d4_confidence_ex1.py](w3_d4_confidence_ex1.py)** — Smallest possible
   example of confidence gating in isolation: embed a query and a few
   candidate documents, average the top-k cosine similarities into a single
@@ -66,7 +90,11 @@ week/day as covered in the course (`w2_d4`, `w3_d1`, `w3_d2`, `w3_d3`,
   printing the prompt instead of calling the API if no key is set. Requires
   an OpenAI API key.
 
-### LLM security: prompt injection & fuzzing
+</details>
+
+<details>
+<summary><strong>LLM security: prompt injection & fuzzing</strong></summary>
+
 - **[w4_d1_local_llm_injection.py](w4_d1_local_llm_injection.py)** —
   Demonstrates a **vulnerable** prompt design against a local `gpt2` model
   (loaded via `transformers`): a "secret" is embedded directly in a plain-text
@@ -89,7 +117,11 @@ week/day as covered in the course (`w2_d4`, `w3_d1`, `w3_d2`, `w3_d3`,
   the file — wire it up to one of the `ask_llm` / `ask_local_llm` functions
   from the other `w4_d1_*` scripts (or your own) before running it.
 
-### Agents: plan → act → check
+</details>
+
+<details>
+<summary><strong>Agents: plan → act → check</strong></summary>
+
 - **[w4_d2_example1.py](w4_d2_example1.py)** — Smallest possible example of
   agent state/memory: a key-value store an agent can write to (`remember`)
   and read from (`recall`) across a session, instead of relying only on
@@ -112,6 +144,8 @@ week/day as covered in the course (`w2_d4`, `w3_d1`, `w3_d2`, `w3_d3`,
   `preferred_city` between turns), and a graceful fallback response when a
   tool fails or no tool matches. Runs as an interactive loop. Requires an
   OpenAI API key.
+
+</details>
 
 ## Setup
 
