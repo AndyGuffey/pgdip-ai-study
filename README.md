@@ -3,7 +3,7 @@
 Running collection of study scripts exploring vector search, embeddings,
 Retrieval-Augmented Generation (RAG), and LLM security, roughly ordered by
 week/day as covered in the course (`w2_d4`, `w3_d1`, `w3_d2`, `w3_d3`,
-`w3_d4`, `w4_d1`, `w4_d4`, ...).
+`w3_d4`, `w4_d1`, `w4_d2`, ...).
 
 ## Topics by file
 
@@ -80,14 +80,33 @@ week/day as covered in the course (`w2_d4`, `w3_d1`, `w3_d2`, `w3_d3`,
   approach in `w4_d1_local_llm_injection.py` — note that a system prompt
   alone is still not a complete defense against injection. Requires an
   OpenAI API key.
-- **[w4_d4_prompt_fuzzing_script.py](w4_d4_prompt_fuzzing_script.py)** —
+- **[w4_d1_prompt_fuzzing_script.py](w4_d1_prompt_fuzzing_script.py)** —
   Prompt fuzzing: a batch of known injection/jailbreak strings (system
   prompt extraction, instruction override, "ignore restrictions", etc.) run
   through an LLM in a loop so responses can be reviewed for guardrail
   failures, rather than testing one attack prompt at a time. **Note:** this
   is a snippet that calls a `run_llm(...)` function which isn't defined in
   the file — wire it up to one of the `ask_llm` / `ask_local_llm` functions
-  from the `w4_d1_*` scripts (or your own) before running it.
+  from the other `w4_d1_*` scripts (or your own) before running it.
+
+### Agents: plan → act → check
+- **[w4_d2_example1.py](w4_d2_example1.py)** — Smallest possible example of
+  agent state/memory: a key-value store an agent can write to (`remember`)
+  and read from (`recall`) across a session, instead of relying only on
+  what's in the current prompt/context.
+- **[w4_d2_small_agent.py](w4_d2_small_agent.py)** — Minimal single-tool
+  agent demonstrating the basic **plan → act → check** loop: an LLM plans
+  which tool to use for a query, the code calls a mocked `get_weather` tool
+  based on that plan, then checks the result before returning a final
+  answer. Requires an OpenAI API key.
+- **[w4_d2_full_demo.py](w4_d2_full_demo.py)** — Fuller single-agent demo
+  building on the same plan → act → check loop, adding: two mock tools
+  (`get_weather`, `check_calendar`), reliability via `retry_with_backoff`
+  (retries with exponential backoff for flaky tool calls), the
+  `AgentState` memory pattern from `w4_d2_example1.py` (remembers
+  `preferred_city` between turns), and a graceful fallback response when a
+  tool fails or no tool matches. Runs as an interactive loop. Requires an
+  OpenAI API key.
 
 ## Setup
 
@@ -114,18 +133,19 @@ langchain-huggingface
 faiss-cpu
 chromadb        # w2_d4_vector_db_example3.py only
 langchain-openai  # w3_d1_rag_demo.py and w3_d2_rag2_demo.py only
-openai            # w3_d4_demo.py and w4_d1_openai_safe.py (uses the OpenAI SDK directly)
+openai            # w3_d4_demo.py, w4_d1_openai_safe.py, w4_d2_small_agent.py, w4_d2_full_demo.py (uses the OpenAI SDK directly)
 transformers      # w4_d1_local_llm_injection.py only (local gpt2 model)
 ```
 
 ### API keys
 
-`w3_d1_rag_demo.py`, `w3_d2_rag2_demo.py`, `w3_d4_demo.py`, and
-`w4_d1_openai_safe.py` call the OpenAI API and expect a key in the
-`my_api_key` / `api_key` variable at the top of the file. **Do not commit
-real API keys.** Prefer setting `OPENAI_API_KEY` as an environment variable
-or loading it from a `.env` file (untracked) instead of hardcoding it before
-pushing this repo to GitHub.
+`w3_d1_rag_demo.py`, `w3_d2_rag2_demo.py`, `w3_d4_demo.py`,
+`w4_d1_openai_safe.py`, `w4_d2_small_agent.py`, and `w4_d2_full_demo.py`
+call the OpenAI API and expect a key in the `my_api_key` / `api_key`
+variable at the top of the file. **Do not commit real API keys.** Prefer
+setting `OPENAI_API_KEY` as an environment variable or loading it from a
+`.env` file (untracked) instead of hardcoding it before pushing this repo
+to GitHub.
 
 `w4_d1_local_llm_injection.py` runs entirely locally (downloads `gpt2` via
 `transformers` on first run) and needs no API key.
