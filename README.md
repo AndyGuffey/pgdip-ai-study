@@ -50,6 +50,21 @@ in the course (`w2_d4`, `w3_d1`, `w3_d2`, `w3_d3`, ...).
   string, and renders the knowledge graph with the retrieved nodes
   highlighted (saved to `rag3_simple.png`).
 
+### Confidence-gated RAG with citations (RAG 4.0)
+- **[w3_d4_confidence_ex1.py](w3_d4_confidence_ex1.py)** — Smallest possible
+  example of confidence gating in isolation: embed a query and a few
+  candidate documents, average the top-k cosine similarities into a single
+  confidence score, and print either a fallback message or a "proceed"
+  message depending on whether it clears a threshold. No LLM call.
+- **[w3_d4_demo.py](w3_d4_demo.py)** — Adds a confidence-gating step before
+  generation: retrieves the top match from a small knowledge base, computes a
+  similarity-based confidence score, and only calls the LLM (via the raw
+  `openai` SDK) if confidence clears a threshold — otherwise it returns a
+  "not confident enough" response instead of guessing. Answers are generated
+  with inline source citations (e.g. `[RefundPolicy.pdf]`). Falls back to
+  printing the prompt instead of calling the API if no key is set. Requires
+  an OpenAI API key.
+
 ## Setup
 
 A virtual environment is already set up in `.venv`. To install/update
@@ -75,15 +90,16 @@ langchain-huggingface
 faiss-cpu
 chromadb        # w2_d4_vector_db_example3.py only
 langchain-openai  # w3_d1_rag_demo.py and w3_d2_rag2_demo.py only
+openai            # w3_d4_demo.py only (uses the OpenAI SDK directly)
 ```
 
 ### API keys
 
-`w3_d1_rag_demo.py` and `w3_d2_rag2_demo.py` call the OpenAI API and expect
-a key in the `my_api_key` variable at the top of the file. **Do not commit
-real API keys.** Prefer setting `OPENAI_API_KEY` as an environment variable
-or loading it from a `.env` file (untracked) instead of hardcoding it before
-pushing this repo to GitHub.
+`w3_d1_rag_demo.py`, `w3_d2_rag2_demo.py`, and `w3_d4_demo.py` call the
+OpenAI API and expect a key in the `my_api_key` / `api_key` variable at the
+top of the file. **Do not commit real API keys.** Prefer setting
+`OPENAI_API_KEY` as an environment variable or loading it from a `.env` file
+(untracked) instead of hardcoding it before pushing this repo to GitHub.
 
 ## Running a script
 
@@ -97,7 +113,7 @@ AI assistance (Claude, via Claude Code) was used in preparing this repo, specifi
 
 - Writing the per-file summaries in the "Topics by file" section above, based on reading the existing scripts.
 - Generating `requirements.txt` from the project's installed dependencies.
-- Installing project dependencies (matplotlib) into the local virtual environment.
+- Installing project dependencies (matplotlib, openai) into the local virtual environment.
 - Initializing the git repository and creating/pushing this GitHub repo.
 
 The Python scripts themselves are the author's own study work from the PGDip course.

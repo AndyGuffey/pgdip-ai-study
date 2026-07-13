@@ -14,3 +14,6 @@ chromadb
 
 # Needed only for w3_d1_rag_demo.py and w3_d2_rag2_demo.py
 langchain-openai
+
+# Needed only for w3_d4_demo.py (uses the OpenAI SDK directly)
+openai==2.45.0
