@@ -11,7 +11,7 @@ client = OpenAI(api_key=my_api_key)
 
 def get_weather(city: str):
     # Mock tool to keep demo simple
-    return {"city": city, "temp": "22Â°C", "condition": "Sunny"}
+    return {"city": city, "temp": "22°C", "condition": "Sunny"}
 
 def agent(query):
     # PLAN
