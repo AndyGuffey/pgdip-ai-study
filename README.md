@@ -94,6 +94,11 @@ week/day as covered in the course (`w2_d4`, `w3_d1`, `w3_d2`, `w3_d3`,
   agent state/memory: a key-value store an agent can write to (`remember`)
   and read from (`recall`) across a session, instead of relying only on
   what's in the current prompt/context.
+- **[w4_d2_retry_backoff.py](w4_d2_retry_backoff.py)** — Standalone example
+  of the retry-with-exponential-backoff reliability pattern used by
+  `w4_d2_full_demo.py`: retries a flaky mock API call up to 3 times,
+  waiting progressively longer (`2 ** attempt` seconds) between attempts
+  instead of retrying instantly or failing immediately.
 - **[w4_d2_small_agent.py](w4_d2_small_agent.py)** — Minimal single-tool
   agent demonstrating the basic **plan → act → check** loop: an LLM plans
   which tool to use for a query, the code calls a mocked `get_weather` tool
