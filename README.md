@@ -150,6 +150,11 @@ Click a topic to expand it and see the file-by-file details.
 <details>
 <summary><strong>Multi-agent orchestration</strong></summary>
 
+- **[w4_d3_message_passing.py](w4_d3_message_passing.py)** — Smallest
+  possible sketch of the Planner → Executor → Verifier shape: each stage is
+  a plain function that takes the previous stage's string output and
+  returns a new string, with no LLM calls. Good for seeing the message-
+  passing shape of the pipeline before adding real agents.
 - **[w4_d3_multi_agent_demo.py](w4_d3_multi_agent_demo.py)** — Three
   cooperating agents with distinct roles: a **Planner** breaks a task into
   2–4 steps, an **Executor** performs one step at a time against the source
