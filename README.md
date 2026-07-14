@@ -155,6 +155,17 @@ Click a topic to expand it and see the file-by-file details.
   a plain function that takes the previous stage's string output and
   returns a new string, with no LLM calls. Good for seeing the message-
   passing shape of the pipeline before adding real agents.
+- **[w4_d3_agent_disagree.py](w4_d3_agent_disagree.py)** — Smallest
+  possible illustration of agent disagreement: two "agents" compute the
+  same thing slightly differently (`x * 2` vs `x * 2.0001`), producing
+  different answers for the same input. No LLM involved — a starting point
+  for thinking about how an orchestrator should detect and resolve
+  disagreement between agents.
+- **[w4_d3_deadlock_example.py](w4_d3_deadlock_example.py)** — Simplified
+  illustration of a deadlock between agents: Planner, Executor, and
+  Verifier are each waiting on one another to proceed, and a repeated-
+  message count is used as a simple signal to detect the deadlock and
+  break out of the loop. No LLM involved.
 - **[w4_d3_multi_agent_demo.py](w4_d3_multi_agent_demo.py)** — Three
   cooperating agents with distinct roles: a **Planner** breaks a task into
   2–4 steps, an **Executor** performs one step at a time against the source
