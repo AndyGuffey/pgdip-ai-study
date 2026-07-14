@@ -170,6 +170,11 @@ Click a topic to expand it and see the file-by-file details.
   different answers for the same input. No LLM involved — a starting point
   for thinking about how an orchestrator should detect and resolve
   disagreement between agents.
+- **[w4_d3_deadlock_example.py](w4_d3_deadlock_example.py)** — Simplified
+  illustration of a deadlock between agents: Planner, Executor, and
+  Verifier are each waiting on one another to proceed, and a repeated-
+  message count is used as a simple signal to detect the deadlock and
+  break out of the loop. No LLM involved.
 
 </details>
 
