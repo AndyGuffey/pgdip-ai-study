@@ -155,15 +155,6 @@ Click a topic to expand it and see the file-by-file details.
   a plain function that takes the previous stage's string output and
   returns a new string, with no LLM calls. Good for seeing the message-
   passing shape of the pipeline before adding real agents.
-- **[w4_d3_multi_agent_demo.py](w4_d3_multi_agent_demo.py)** — Three
-  cooperating agents with distinct roles: a **Planner** breaks a task into
-  2–4 steps, an **Executor** performs one step at a time against the source
-  text, and a **Verifier** checks each result and returns `APPROVE`/`REVISE`,
-  triggering one re-attempt from the Executor on a `REVISE` verdict. An
-  orchestration loop drives the steps and concatenates the approved results
-  into a final answer. Demo task: summarise a paragraph and extract 3 key
-  points. Loads `OPENAI_API_KEY` from a `.env` file via `python-dotenv`.
-  Requires an OpenAI API key.
 - **[w4_d3_agent_disagree.py](w4_d3_agent_disagree.py)** — Smallest
   possible illustration of agent disagreement: two "agents" compute the
   same thing slightly differently (`x * 2` vs `x * 2.0001`), producing
@@ -175,6 +166,15 @@ Click a topic to expand it and see the file-by-file details.
   Verifier are each waiting on one another to proceed, and a repeated-
   message count is used as a simple signal to detect the deadlock and
   break out of the loop. No LLM involved.
+- **[w4_d3_multi_agent_demo.py](w4_d3_multi_agent_demo.py)** — Three
+  cooperating agents with distinct roles: a **Planner** breaks a task into
+  2–4 steps, an **Executor** performs one step at a time against the source
+  text, and a **Verifier** checks each result and returns `APPROVE`/`REVISE`,
+  triggering one re-attempt from the Executor on a `REVISE` verdict. An
+  orchestration loop drives the steps and concatenates the approved results
+  into a final answer. Demo task: summarise a paragraph and extract 3 key
+  points. Loads `OPENAI_API_KEY` from a `.env` file via `python-dotenv`.
+  Requires an OpenAI API key.
 
 </details>
 
