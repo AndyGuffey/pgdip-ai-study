@@ -15,8 +15,12 @@ chromadb
 # Needed only for w3_d1_rag_demo.py and w3_d2_rag2_demo.py
 langchain-openai
 
-# Needed only for w3_d4_demo.py and w4_d1_openai_safe.py (uses the OpenAI SDK directly)
+# Needed only for w3_d4_demo.py, w4_d1_openai_safe.py, w4_d2_small_agent.py,
+# w4_d2_full_demo.py, and w4_d3_multi_agent_demo.py (uses the OpenAI SDK directly)
 openai==2.45.0
 
 # Needed only for w4_d1_local_llm_injection.py (local gpt2 model)
 transformers==5.12.1
+
+# Needed only for w4_d3_multi_agent_demo.py (loads OPENAI_API_KEY from a .env file)
+python-dotenv==1.2.2

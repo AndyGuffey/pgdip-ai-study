@@ -147,6 +147,21 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
+<details>
+<summary><strong>Multi-agent orchestration</strong></summary>
+
+- **[w4_d3_multi_agent_demo.py](w4_d3_multi_agent_demo.py)** — Three
+  cooperating agents with distinct roles: a **Planner** breaks a task into
+  2–4 steps, an **Executor** performs one step at a time against the source
+  text, and a **Verifier** checks each result and returns `APPROVE`/`REVISE`,
+  triggering one re-attempt from the Executor on a `REVISE` verdict. An
+  orchestration loop drives the steps and concatenates the approved results
+  into a final answer. Demo task: summarise a paragraph and extract 3 key
+  points. Loads `OPENAI_API_KEY` from a `.env` file via `python-dotenv`.
+  Requires an OpenAI API key.
+
+</details>
+
 ## Setup
 
 A virtual environment is already set up in `.venv`. To install/update
@@ -172,8 +187,9 @@ langchain-huggingface
 faiss-cpu
 chromadb        # w2_d4_vector_db_example3.py only
 langchain-openai  # w3_d1_rag_demo.py and w3_d2_rag2_demo.py only
-openai            # w3_d4_demo.py, w4_d1_openai_safe.py, w4_d2_small_agent.py, w4_d2_full_demo.py (uses the OpenAI SDK directly)
+openai            # w3_d4_demo.py, w4_d1_openai_safe.py, w4_d2_small_agent.py, w4_d2_full_demo.py, w4_d3_multi_agent_demo.py (uses the OpenAI SDK directly)
 transformers      # w4_d1_local_llm_injection.py only (local gpt2 model)
+python-dotenv     # w4_d3_multi_agent_demo.py only (loads OPENAI_API_KEY from a .env file)
 ```
 
 ### API keys
@@ -185,6 +201,11 @@ variable at the top of the file. **Do not commit real API keys.** Prefer
 setting `OPENAI_API_KEY` as an environment variable or loading it from a
 `.env` file (untracked) instead of hardcoding it before pushing this repo
 to GitHub.
+
+`w4_d3_multi_agent_demo.py` already follows that recommendation: it loads
+`OPENAI_API_KEY` from a `.env` file (untracked, via `python-dotenv`) instead
+of a hardcoded variable — create a `.env` file with
+`OPENAI_API_KEY=your-api-key-here` before running it.
 
 `w4_d1_local_llm_injection.py` runs entirely locally (downloads `gpt2` via
 `transformers` on first run) and needs no API key.
