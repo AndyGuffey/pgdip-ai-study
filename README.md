@@ -164,6 +164,12 @@ Click a topic to expand it and see the file-by-file details.
   into a final answer. Demo task: summarise a paragraph and extract 3 key
   points. Loads `OPENAI_API_KEY` from a `.env` file via `python-dotenv`.
   Requires an OpenAI API key.
+- **[w4_d3_agent_disagree.py](w4_d3_agent_disagree.py)** — Smallest
+  possible illustration of agent disagreement: two "agents" compute the
+  same thing slightly differently (`x * 2` vs `x * 2.0001`), producing
+  different answers for the same input. No LLM involved — a starting point
+  for thinking about how an orchestrator should detect and resolve
+  disagreement between agents.
 
 </details>
 
