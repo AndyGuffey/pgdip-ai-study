@@ -178,6 +178,24 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
+<details>
+<summary><strong>OpenAI function/tool calling</strong></summary>
+
+- **[w4_d4_open_ai_fun_call.py](w4_d4_open_ai_fun_call.py)** — Just the
+  tool schema half of function calling: defines an `add_numbers(a, b)`
+  tool spec (JSON-schema-style `parameters`) in the shape the OpenAI API
+  expects, with no client call or execution logic. Useful as a minimal
+  reference for the schema shape before wiring it into a real request.
+- **[w4_d4_toy_calc_tool.py](w4_d4_toy_calc_tool.py)** — Full round trip of
+  OpenAI function/tool calling: defines an `add` tool, sends a user message
+  to `gpt-4o-mini` with that tool available, executes the tool locally when
+  the model requests a call, feeds the result back into the conversation as
+  a `tool` message, and asks the model for a final answer informed by the
+  result. Loads `OPENAI_API_KEY` from a `.env` file via `python-dotenv`.
+  Requires an OpenAI API key.
+
+</details>
+
 ## Setup
 
 A virtual environment is already set up in `.venv`. To install/update
@@ -203,9 +221,9 @@ langchain-huggingface
 faiss-cpu
 chromadb        # w2_d4_vector_db_example3.py only
 langchain-openai  # w3_d1_rag_demo.py and w3_d2_rag2_demo.py only
-openai            # w3_d4_demo.py, w4_d1_openai_safe.py, w4_d2_small_agent.py, w4_d2_full_demo.py, w4_d3_multi_agent_demo.py (uses the OpenAI SDK directly)
+openai            # w3_d4_demo.py, w4_d1_openai_safe.py, w4_d2_small_agent.py, w4_d2_full_demo.py, w4_d3_multi_agent_demo.py, w4_d4_toy_calc_tool.py (uses the OpenAI SDK directly)
 transformers      # w4_d1_local_llm_injection.py only (local gpt2 model)
-python-dotenv     # w4_d3_multi_agent_demo.py only (loads OPENAI_API_KEY from a .env file)
+python-dotenv     # w4_d3_multi_agent_demo.py and w4_d4_toy_calc_tool.py only (loads OPENAI_API_KEY from a .env file)
 ```
 
 ### API keys
@@ -218,13 +236,16 @@ setting `OPENAI_API_KEY` as an environment variable or loading it from a
 `.env` file (untracked) instead of hardcoding it before pushing this repo
 to GitHub.
 
-`w4_d3_multi_agent_demo.py` already follows that recommendation: it loads
-`OPENAI_API_KEY` from a `.env` file (untracked, via `python-dotenv`) instead
-of a hardcoded variable — create a `.env` file with
-`OPENAI_API_KEY=your-api-key-here` before running it.
+`w4_d3_multi_agent_demo.py` and `w4_d4_toy_calc_tool.py` already follow that
+recommendation: they load `OPENAI_API_KEY` from a `.env` file (untracked,
+via `python-dotenv`) instead of a hardcoded variable — create a `.env` file
+with `OPENAI_API_KEY=your-api-key-here` before running them.
 
 `w4_d1_local_llm_injection.py` runs entirely locally (downloads `gpt2` via
 `transformers` on first run) and needs no API key.
+
+`w4_d4_open_ai_fun_call.py` only defines a tool schema — it doesn't call the
+OpenAI API and needs no key.
 
 ## Running a script
 
