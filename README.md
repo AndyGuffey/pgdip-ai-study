@@ -193,6 +193,25 @@ Click a topic to expand it and see the file-by-file details.
   a `tool` message, and asks the model for a final answer informed by the
   result. Loads `OPENAI_API_KEY` from a `.env` file via `python-dotenv`.
   Requires an OpenAI API key.
+- **[w4_d4_2_tools.py](w4_d4_2_tools.py)** — Offering the model a *choice*
+  of tools: `get_weather` and `get_client_details` are both provided in the
+  same request, and the model picks which one (if any) fits a free-typed
+  user question; the chosen tool is then executed via an `if`/`elif` on the
+  returned function name. Loads `OPENAI_API_KEY` from a `.env` file via
+  `python-dotenv`. Requires an OpenAI API key.
+- **[w4_d4_dynamic_tools.py](w4_d4_dynamic_tools.py)** — Same idea as
+  `w4_d4_2_tools.py`, but tools are registered at runtime via a
+  `register_tool()` helper into a name → function `TOOL_REGISTRY` and a
+  matching list of schemas, so the model's chosen tool can be looked up and
+  called generically (`TOOL_REGISTRY[func_name](**args)`) instead of an
+  `if`/`elif` chain per tool. Loads `OPENAI_API_KEY` from a `.env` file via
+  `python-dotenv`. Requires an OpenAI API key.
+- **[w4_d4_real_trace_example.py](w4_d4_real_trace_example.py)** — Not a
+  runnable script: a sample trace record showing what an agent
+  observability/tracing log entry should capture when an agent decides to
+  call a tool — timestamp, role, decision type, the chosen tool and its
+  arguments, and a `run_id` to correlate it with the rest of that session's
+  trace.
 
 </details>
 
@@ -221,9 +240,9 @@ langchain-huggingface
 faiss-cpu
 chromadb        # w2_d4_vector_db_example3.py only
 langchain-openai  # w3_d1_rag_demo.py and w3_d2_rag2_demo.py only
-openai            # w3_d4_demo.py, w4_d1_openai_safe.py, w4_d2_small_agent.py, w4_d2_full_demo.py, w4_d3_multi_agent_demo.py, w4_d4_toy_calc_tool.py (uses the OpenAI SDK directly)
+openai            # w3_d4_demo.py, w4_d1_openai_safe.py, w4_d2_small_agent.py, w4_d2_full_demo.py, w4_d3_multi_agent_demo.py, w4_d4_toy_calc_tool.py, w4_d4_2_tools.py, w4_d4_dynamic_tools.py (uses the OpenAI SDK directly)
 transformers      # w4_d1_local_llm_injection.py only (local gpt2 model)
-python-dotenv     # w4_d3_multi_agent_demo.py and w4_d4_toy_calc_tool.py only (loads OPENAI_API_KEY from a .env file)
+python-dotenv     # w4_d3_multi_agent_demo.py, w4_d4_toy_calc_tool.py, w4_d4_2_tools.py, w4_d4_dynamic_tools.py only (loads OPENAI_API_KEY from a .env file)
 ```
 
 ### API keys
@@ -236,13 +255,18 @@ setting `OPENAI_API_KEY` as an environment variable or loading it from a
 `.env` file (untracked) instead of hardcoding it before pushing this repo
 to GitHub.
 
-`w4_d3_multi_agent_demo.py` and `w4_d4_toy_calc_tool.py` already follow that
-recommendation: they load `OPENAI_API_KEY` from a `.env` file (untracked,
-via `python-dotenv`) instead of a hardcoded variable — create a `.env` file
-with `OPENAI_API_KEY=your-api-key-here` before running them.
+`w4_d3_multi_agent_demo.py`, `w4_d4_toy_calc_tool.py`, `w4_d4_2_tools.py`,
+and `w4_d4_dynamic_tools.py` already follow that recommendation: they load
+`OPENAI_API_KEY` from a `.env` file (untracked, via `python-dotenv`) instead
+of a hardcoded variable — create a `.env` file with
+`OPENAI_API_KEY=your-api-key-here` before running them.
 
 `w4_d1_local_llm_injection.py` runs entirely locally (downloads `gpt2` via
 `transformers` on first run) and needs no API key.
+
+`w4_d4_open_ai_fun_call.py` and `w4_d4_real_trace_example.py` don't call the
+OpenAI API at all — the former only defines a tool schema and the latter is
+a static sample trace record — so neither needs a key.
 
 `w4_d4_open_ai_fun_call.py` only defines a tool schema — it doesn't call the
 OpenAI API and needs no key.
