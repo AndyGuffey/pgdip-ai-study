@@ -206,12 +206,39 @@ Click a topic to expand it and see the file-by-file details.
   called generically (`TOOL_REGISTRY[func_name](**args)`) instead of an
   `if`/`elif` chain per tool. Loads `OPENAI_API_KEY` from a `.env` file via
   `python-dotenv`. Requires an OpenAI API key.
+
+</details>
+
+<details>
+<summary><strong>Agent observability & tracing</strong></summary>
+
 - **[w4_d4_real_trace_example.py](w4_d4_real_trace_example.py)** — Not a
   runnable script: a sample trace record showing what an agent
   observability/tracing log entry should capture when an agent decides to
   call a tool — timestamp, role, decision type, the chosen tool and its
   arguments, and a `run_id` to correlate it with the rest of that session's
   trace.
+- **[w4_d4_simple_trace_logger.py](w4_d4_simple_trace_logger.py)** — A
+  minimal, reusable trace logger: `log_event()` stamps an event dict with
+  the current time and appends it as a JSON line to `trace.log`, building
+  an on-disk, replayable record of an agent's decisions/actions.
+- **[w4_d4_tool_call_trace_logging.py](w4_d4_tool_call_trace_logging.py)**
+  — Wraps a real tool (`get_weather`) so every call and its result are
+  logged via `log_event` (imported from `w4_d4_simple_trace_logger.py`),
+  showing where trace logging hooks into an actual tool rather than just
+  the log entry shape.
+- **[w4_d4_logging_llm_decisions.py](w4_d4_logging_llm_decisions.py)** —
+  Wraps an OpenAI chat completion call so the model's decision (which tool
+  it chose, or that it responded directly) is logged as a trace event
+  alongside the response, again via `log_event`. Requires an OpenAI API
+  key.
+- **[w4_d4_full_demo.py](w4_d4_full_demo.py)** — Combines OpenAI
+  function/tool calling with tracing in one script: an `add` tool is
+  offered to `gpt-4o-mini`, the model decides whether to call it, the tool
+  executes locally, and every step (the user message, the model's
+  decision, and each tool call/result) is logged as a JSON-line trace
+  event. Loads `OPENAI_API_KEY` from a `.env` file via `python-dotenv`.
+  Requires an OpenAI API key.
 
 </details>
 
@@ -240,9 +267,9 @@ langchain-huggingface
 faiss-cpu
 chromadb        # w2_d4_vector_db_example3.py only
 langchain-openai  # w3_d1_rag_demo.py and w3_d2_rag2_demo.py only
-openai            # w3_d4_demo.py, w4_d1_openai_safe.py, w4_d2_small_agent.py, w4_d2_full_demo.py, w4_d3_multi_agent_demo.py, w4_d4_toy_calc_tool.py, w4_d4_2_tools.py, w4_d4_dynamic_tools.py (uses the OpenAI SDK directly)
+openai            # w3_d4_demo.py, w4_d1_openai_safe.py, w4_d2_small_agent.py, w4_d2_full_demo.py, w4_d3_multi_agent_demo.py, w4_d4_toy_calc_tool.py, w4_d4_2_tools.py, w4_d4_dynamic_tools.py, w4_d4_logging_llm_decisions.py, w4_d4_full_demo.py (uses the OpenAI SDK directly)
 transformers      # w4_d1_local_llm_injection.py only (local gpt2 model)
-python-dotenv     # w4_d3_multi_agent_demo.py, w4_d4_toy_calc_tool.py, w4_d4_2_tools.py, w4_d4_dynamic_tools.py only (loads OPENAI_API_KEY from a .env file)
+python-dotenv     # w4_d3_multi_agent_demo.py, w4_d4_toy_calc_tool.py, w4_d4_2_tools.py, w4_d4_dynamic_tools.py, w4_d4_full_demo.py only (loads OPENAI_API_KEY from a .env file)
 ```
 
 ### API keys
@@ -256,17 +283,22 @@ setting `OPENAI_API_KEY` as an environment variable or loading it from a
 to GitHub.
 
 `w4_d3_multi_agent_demo.py`, `w4_d4_toy_calc_tool.py`, `w4_d4_2_tools.py`,
-and `w4_d4_dynamic_tools.py` already follow that recommendation: they load
-`OPENAI_API_KEY` from a `.env` file (untracked, via `python-dotenv`) instead
-of a hardcoded variable — create a `.env` file with
-`OPENAI_API_KEY=your-api-key-here` before running them.
+`w4_d4_dynamic_tools.py`, and `w4_d4_full_demo.py` already follow that
+recommendation: they load `OPENAI_API_KEY` from a `.env` file (untracked,
+via `python-dotenv`) instead of a hardcoded variable — create a `.env` file
+with `OPENAI_API_KEY=your-api-key-here` before running them.
+
+`w4_d4_logging_llm_decisions.py` calls `OpenAI()` with no explicit key
+argument, so it relies on `OPENAI_API_KEY` already being set as an
+environment variable (it doesn't call `load_dotenv()` itself) — export it
+in your shell, or `source` a `.env` file, before running it.
 
 `w4_d1_local_llm_injection.py` runs entirely locally (downloads `gpt2` via
 `transformers` on first run) and needs no API key.
 
-`w4_d4_open_ai_fun_call.py` and `w4_d4_real_trace_example.py` don't call the
-OpenAI API at all — the former only defines a tool schema and the latter is
-a static sample trace record — so neither needs a key.
+`w4_d4_open_ai_fun_call.py`, `w4_d4_real_trace_example.py`,
+`w4_d4_simple_trace_logger.py`, and `w4_d4_tool_call_trace_logging.py` don't
+call the OpenAI API at all, so none of them need a key.
 
 `w4_d4_open_ai_fun_call.py` only defines a tool schema — it doesn't call the
 OpenAI API and needs no key.
