@@ -35,6 +35,21 @@ Click a topic to expand it and see the file-by-file details.
 </details>
 
 <details>
+<summary><strong>Structured output validation & repair</strong></summary>
+
+- **[w2_d2_json_schema_validation.py](w2_d2_json_schema_validation.py)** —
+  Validates a flawed, LLM-style JSON product record against a strict JSON
+  Schema (`jsonschema`, `Draft202012Validator`) that catches type
+  mismatches, disallowed enum values, and extra fields, then attempts to
+  auto-correct common mistakes (a string price with a currency symbol, a
+  non-standard currency code, inconsistent casing, non-string tags) and
+  re-validates — printing before/after diagnostics either way. Also
+  includes a small helper to strip JavaScript-style `//` comments that
+  LLMs sometimes add to otherwise-valid JSON.
+
+</details>
+
+<details>
 <summary><strong>Chunking & embeddings</strong></summary>
 
 - **[d3_chunk_demo.py](d3_chunk_demo.py)** — Standalone demo of the first half
