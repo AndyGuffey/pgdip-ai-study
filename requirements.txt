@@ -19,8 +19,13 @@ langchain-openai
 # w4_d2_full_demo.py, and w4_d3_multi_agent_demo.py (uses the OpenAI SDK directly)
 openai==2.45.0
 
-# Needed only for w4_d1_local_llm_injection.py (local gpt2 model)
+# Needed for w4_d1_local_llm_injection.py (local gpt2 model) and
+# llmworld.py (pretrained sentiment-classification pipelines)
 transformers==5.12.1
 
 # Needed only for w4_d3_multi_agent_demo.py (loads OPENAI_API_KEY from a .env file)
 python-dotenv==1.2.2
+
+# Needed only for llmworld.py
+datasets==5.0.0
+pandas==3.0.3

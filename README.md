@@ -2,12 +2,23 @@
 
 Running collection of study scripts exploring vector search, embeddings,
 Retrieval-Augmented Generation (RAG), and LLM security, roughly ordered by
-week/day as covered in the course (`w2_d4`, `w3_d1`, `w3_d2`, `w3_d3`,
-`w3_d4`, `w4_d1`, `w4_d2`, ...).
+week/day as covered in the course (`w2_d1`, `w2_d4`, `w3_d1`, `w3_d2`,
+`w3_d3`, `w3_d4`, `w4_d1`, `w4_d2`, ...).
 
 ## Topics by file
 
 Click a topic to expand it and see the file-by-file details.
+
+<details>
+<summary><strong>Model evaluation & benchmarking</strong></summary>
+
+- **[w2_d1_sentiment_model_comparison.py](w2_d1_sentiment_model_comparison.py)**
+  — Compares two pretrained sentiment-analysis models — a general SST-2
+  model and one fine-tuned specifically on IMDB — against the same 60 IMDB
+  test reviews, scores each against the dataset's gold labels, and prints a
+  mini leaderboard ranking the models by accuracy.
+
+</details>
 
 <details>
 <summary><strong>Chunking & embeddings</strong></summary>
