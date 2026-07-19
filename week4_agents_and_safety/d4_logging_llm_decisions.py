@@ -3,7 +3,7 @@
 # directly) gets logged as a trace event alongside the raw response.
 
 from openai import OpenAI
-from w4_d4_simple_trace_logger import log_event
+from d4_simple_trace_logger import log_event
 
 client = OpenAI()
 
