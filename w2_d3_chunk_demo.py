@@ -1,3 +1,11 @@
+# Chunking & embeddings: the retrieval half of a RAG pipeline, standalone
+# and dependency-light. Splits documents into overlapping word-based
+# chunks, embeds each chunk with a small `sentence-transformers` model, and
+# runs cosine-similarity semantic search over the embeddings to find the
+# chunks most relevant to a query — including a boundary-query example
+# showing why the chunk overlap matters. No vector database or LLM call
+# involved.
+
 from sentence_transformers import SentenceTransformer, util
 import numpy as np
 from typing import List, Dict, Any, Tuple
@@ -97,7 +105,7 @@ def build_corpus_chunks(docs: List[Dict[str, str]], max_words=30, overlap=8):
 # --------------------------------------
 # EMBEDDINGS: Convert text chunks into dense vector representations
 # These vectors capture semantic meaning in mathematical form (384 dimensions)
-# Similar meanings â†’ similar vectors â†’ high cosine similarity
+# Similar meanings → similar vectors → high cosine similarity
 def embed_chunks(
     chunks: List[Dict[str, Any]],
     model_name: str = "all-MiniLM-L6-v2",  # Fast, lightweight sentence transformer

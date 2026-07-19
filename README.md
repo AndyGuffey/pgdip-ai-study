@@ -2,8 +2,8 @@
 
 Running collection of study scripts exploring vector search, embeddings,
 Retrieval-Augmented Generation (RAG), and LLM security, roughly ordered by
-week/day as covered in the course (`w2_d1`, `w2_d2`, `w2_d4`, `w3_d1`,
-`w3_d2`, `w3_d3`, `w3_d4`, `w4_d1`, `w4_d2`, ...).
+week/day as covered in the course (`w2_d1`, `w2_d2`, `w2_d3`, `w2_d4`,
+`w3_d1`, `w3_d2`, `w3_d3`, `w3_d4`, `w4_d1`, `w4_d2`, ...).
 
 ## Topics by file
 
@@ -52,7 +52,12 @@ Click a topic to expand it and see the file-by-file details.
 <details>
 <summary><strong>Chunking & embeddings</strong></summary>
 
-- **[d3_chunk_demo.py](d3_chunk_demo.py)** — Standalone demo of the first half
+- **[w2_d3_embedding_similarity.py](w2_d3_embedding_similarity.py)** —
+  Smallest possible illustration of embeddings: encode three sentences with
+  `sentence-transformers` and print the full pairwise cosine-similarity
+  matrix, showing that two semantically similar sentences score much
+  higher against each other than either does against an unrelated one.
+- **[w2_d3_chunk_demo.py](w2_d3_chunk_demo.py)** — Standalone demo of the first half
   of a RAG pipeline: word-based chunking with overlap, embedding chunks with
   `sentence-transformers`, and cosine-similarity search over the resulting
   vectors. No vector database or LLM involved — good for seeing chunking and
