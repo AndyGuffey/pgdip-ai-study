@@ -2,7 +2,7 @@
 # its result are logged as trace events via log_event, showing where trace
 # logging hooks into a real tool rather than just the log entry shape.
 
-from w4_d4_simple_trace_logger import log_event
+from d4_simple_trace_logger import log_event
 
 
 def get_weather(city):

@@ -9,27 +9,27 @@ langchain-community==0.4.2
 langchain-huggingface==1.2.2
 faiss-cpu==1.14.3
 
-# Needed only for w2_d4_vector_db_example3.py
+# Needed only for week2_embeddings_and_generation/d4_vector_db_example3.py
 chromadb
 
-# Needed only for w3_d1_rag_demo.py and w3_d2_rag2_demo.py
+# Needed only for week3_rag/d1_rag_demo.py and week3_rag/d2_rag2_demo.py
 langchain-openai
 
-# Needed only for w3_d4_demo.py, w4_d1_openai_safe.py, w4_d2_small_agent.py,
-# w4_d2_full_demo.py, and w4_d3_multi_agent_demo.py (uses the OpenAI SDK directly)
+# Needed only for week3_rag/d4_demo.py, week4_agents_and_safety/d1_openai_safe.py, week4_agents_and_safety/d2_small_agent.py,
+# week4_agents_and_safety/d2_full_demo.py, and week4_agents_and_safety/d3_multi_agent_demo.py (uses the OpenAI SDK directly)
 openai==2.45.0
 
-# Needed for w4_d1_local_llm_injection.py, w2_d2_constrained_generation_demo.py
-# (local gpt2 model), and w2_d1_sentiment_model_comparison.py (pretrained
+# Needed for week4_agents_and_safety/d1_local_llm_injection.py, week2_embeddings_and_generation/d2_constrained_generation_demo.py
+# (local gpt2 model), and week2_embeddings_and_generation/d1_sentiment_model_comparison.py (pretrained
 # sentiment-classification pipelines)
 transformers==5.12.1
 
-# Needed only for w4_d3_multi_agent_demo.py (loads OPENAI_API_KEY from a .env file)
+# Needed only for week4_agents_and_safety/d3_multi_agent_demo.py (loads OPENAI_API_KEY from a .env file)
 python-dotenv==1.2.2
 
-# Needed only for w2_d1_sentiment_model_comparison.py
+# Needed only for week2_embeddings_and_generation/d1_sentiment_model_comparison.py
 datasets==5.0.0
 pandas==3.0.3
 
-# Needed only for w2_d2_json_schema_validation.py
+# Needed only for week2_embeddings_and_generation/d2_json_schema_validation.py
 jsonschema==4.26.0
