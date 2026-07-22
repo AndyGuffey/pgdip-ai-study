@@ -3,8 +3,8 @@
 Running collection of study scripts exploring vector search, embeddings,
 Retrieval-Augmented Generation (RAG), and LLM security, organized by course
 week (`week2_embeddings_and_generation/`, `week3_rag/`,
-`week4_agents_and_safety/`), with each file prefixed by the day it covers
-within that week (`d1_`, `d2_`, ...).
+`week4_agents_and_safety/`, `week5_strategy_risk_governance/`), with each
+file prefixed by the day it covers within that week (`d1_`, `d2_`, ...).
 
 ## Topics by file
 
@@ -289,6 +289,18 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
+<details>
+<summary><strong>Local LLM inference</strong></summary>
+
+- **[week5_strategy_risk_governance/d1_example1.py](week5_strategy_risk_governance/d1_example1.py)** —
+  Runs a quantized, fully offline model (Phi-2, `.gguf` format) via
+  `llama-cpp-python`, prompting it for code explanation, a technical Q&A
+  answer, a short creative-writing piece, and a problem-solving list — no
+  API key or network call involved. Requires a local
+  `phi-2.Q4_K_M.gguf` model file in the same directory.
+
+</details>
+
 ## Setup
 
 A virtual environment is already set up in `.venv`. To install/update
@@ -317,6 +329,7 @@ langchain-openai  # week3_rag/d1_rag_demo.py and week3_rag/d2_rag2_demo.py only
 openai            # week3_rag/d4_demo.py, week4_agents_and_safety/d1_openai_safe.py, week4_agents_and_safety/d2_small_agent.py, week4_agents_and_safety/d2_full_demo.py, week4_agents_and_safety/d3_multi_agent_demo.py, week4_agents_and_safety/d4_toy_calc_tool.py, week4_agents_and_safety/d4_2_tools.py, week4_agents_and_safety/d4_dynamic_tools.py, week4_agents_and_safety/d4_logging_llm_decisions.py, week4_agents_and_safety/d4_full_demo.py (uses the OpenAI SDK directly)
 transformers      # week4_agents_and_safety/d1_local_llm_injection.py only (local gpt2 model)
 python-dotenv     # week4_agents_and_safety/d3_multi_agent_demo.py, week4_agents_and_safety/d4_toy_calc_tool.py, week4_agents_and_safety/d4_2_tools.py, week4_agents_and_safety/d4_dynamic_tools.py, week4_agents_and_safety/d4_full_demo.py only (loads OPENAI_API_KEY from a .env file)
+llama-cpp-python  # week5_strategy_risk_governance/d1_example1.py only (runs a local GGUF model via llama.cpp bindings)
 ```
 
 ### API keys
@@ -342,6 +355,11 @@ in your shell, or `source` a `.env` file, before running it.
 
 `week4_agents_and_safety/d1_local_llm_injection.py` runs entirely locally (downloads `gpt2` via
 `transformers` on first run) and needs no API key.
+
+`week5_strategy_risk_governance/d1_example1.py` also runs entirely locally
+(a quantized Phi-2 model loaded via `llama-cpp-python`) and needs no API
+key — but it does need the `phi-2.Q4_K_M.gguf` model file present in that
+directory.
 
 `week4_agents_and_safety/d4_open_ai_fun_call.py`, `week4_agents_and_safety/d4_real_trace_example.py`,
 `week4_agents_and_safety/d4_simple_trace_logger.py`, and `week4_agents_and_safety/d4_tool_call_trace_logging.py` don't
