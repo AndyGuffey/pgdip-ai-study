@@ -33,3 +33,7 @@ pandas==3.0.3
 
 # Needed only for week2_embeddings_and_generation/d2_json_schema_validation.py
 jsonschema==4.26.0
+
+# Needed only for week5_strategy_risk_governance/d1_example1.py (runs a local
+# GGUF model, e.g. Phi-2, via llama.cpp bindings)
+llama-cpp-python
