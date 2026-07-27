@@ -240,7 +240,7 @@ Click a topic to expand it and see the file-by-file details.
   a `tool` message, and asks the model for a final answer informed by the
   result. Loads `OPENAI_API_KEY` from a `.env` file via `python-dotenv`.
   Requires an OpenAI API key.
-- **[week4_agents_and_safety/d4_2_tools.py](week4_agents_and_safety/d4_2_tools.py)** — Offering the model a *choice*
+- **[week4_agents_and_safety/d4_2_tools.py](week4_agents_and_safety/d4_2_tools.py)** — Offering the model a _choice_
   of tools: `get_weather` and `get_client_details` are both provided in the
   same request, and the model picks which one (if any) fits a free-typed
   user question; the chosen tool is then executed via an `if`/`elif` on the
@@ -298,6 +298,13 @@ Click a topic to expand it and see the file-by-file details.
   answer, a short creative-writing piece, and a problem-solving list — no
   API key or network call involved. Requires a local
   `phi-2.Q4_K_M.gguf` model file in the same directory.
+- **[week5_strategy_risk_governance/d1_example2.py](week5_strategy_risk_governance/d1_example2.py)** —
+  Same idea, different approach: calls a local Phi model through
+  [Ollama](https://ollama.com)'s HTTP API (`http://localhost:11434/api/generate`)
+  via `requests` instead of loading the model in-process, with error
+  handling for the Ollama server not running, the request timing out, or
+  the call being interrupted. Requires Ollama running locally
+  (`ollama serve`) with the `phi` model pulled.
 
 </details>
 
@@ -330,6 +337,7 @@ openai            # week3_rag/d4_demo.py, week4_agents_and_safety/d1_openai_safe
 transformers      # week4_agents_and_safety/d1_local_llm_injection.py only (local gpt2 model)
 python-dotenv     # week4_agents_and_safety/d3_multi_agent_demo.py, week4_agents_and_safety/d4_toy_calc_tool.py, week4_agents_and_safety/d4_2_tools.py, week4_agents_and_safety/d4_dynamic_tools.py, week4_agents_and_safety/d4_full_demo.py only (loads OPENAI_API_KEY from a .env file)
 llama-cpp-python  # week5_strategy_risk_governance/d1_example1.py only (runs a local GGUF model via llama.cpp bindings)
+requests          # week5_strategy_risk_governance/d1_example2.py only (calls a local Ollama server's HTTP API)
 ```
 
 ### API keys
@@ -361,6 +369,10 @@ in your shell, or `source` a `.env` file, before running it.
 key — but it does need the `phi-2.Q4_K_M.gguf` model file present in that
 directory.
 
+`week5_strategy_risk_governance/d1_example2.py` also needs no API key — it
+calls a local Ollama server instead of a hosted API. It does need Ollama
+installed and running (`ollama serve`) with the `phi` model pulled first.
+
 `week4_agents_and_safety/d4_open_ai_fun_call.py`, `week4_agents_and_safety/d4_real_trace_example.py`,
 `week4_agents_and_safety/d4_simple_trace_logger.py`, and `week4_agents_and_safety/d4_tool_call_trace_logging.py` don't
 call the OpenAI API at all, so none of them need a key.
@@ -382,8 +394,3 @@ AI assistance (Claude, via Claude Code) was used in preparing this repo, specifi
 - Generating `requirements.txt` from the project's installed dependencies.
 - Installing project dependencies (matplotlib, openai) into the local virtual environment.
 - Initializing the git repository and creating/pushing this GitHub repo.
-
-The Python scripts themselves are the author's own study work from the PGDip course.
-AI was not used to write or modify the code in the `.py` files, and was not used to
-generate or handle any real API keys or credentials — the `my_api_key` placeholders
-are intentionally left blank (see the API keys note above).

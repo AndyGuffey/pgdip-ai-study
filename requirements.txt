@@ -37,3 +37,7 @@ jsonschema==4.26.0
 # Needed only for week5_strategy_risk_governance/d1_example1.py (runs a local
 # GGUF model, e.g. Phi-2, via llama.cpp bindings)
 llama-cpp-python
+
+# Needed only for week5_strategy_risk_governance/d1_example2.py (calls a
+# local Ollama server's HTTP API)
+requests
