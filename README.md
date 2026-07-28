@@ -308,6 +308,27 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
+<details>
+<summary><strong>Inference performance measurement</strong></summary>
+
+- **[week5_strategy_risk_governance/d2_inference_performance_ex1.py](week5_strategy_risk_governance/d2_inference_performance_ex1.py)**
+  — Smallest possible latency measurement: sends one prompt to OpenAI's
+  `gpt-4o-mini` and times the full request-to-response call with
+  `time.time()`. Requires an OpenAI API key.
+- **[week5_strategy_risk_governance/d2_inference_performance_ex2.py](week5_strategy_risk_governance/d2_inference_performance_ex2.py)**
+  — No LLM involved: simulates a small neural network's forward pass
+  (linear layer → ReLU → linear layer) over increasing batch sizes using
+  vectorized NumPy operations, timing each batch to show how real batched
+  inference scales with batch size.
+- **[week5_strategy_risk_governance/d2_inference_performance_ex3.py](week5_strategy_risk_governance/d2_inference_performance_ex3.py)**
+  — Streams the same prompt to `gpt-4o-mini` three times, measuring
+  time-to-first-token (TTFT), total time, and tokens/sec per run, then
+  compares Run 2 against Run 1 to check for (and explain the absence of)
+  response caching between independent OpenAI API calls. Requires an
+  OpenAI API key.
+
+</details>
+
 ## Setup
 
 A virtual environment is already set up in `.venv`. To install/update
@@ -333,9 +354,9 @@ langchain-huggingface
 faiss-cpu
 chromadb        # week2_embeddings_and_generation/d4_vector_db_example3.py only
 langchain-openai  # week3_rag/d1_rag_demo.py and week3_rag/d2_rag2_demo.py only
-openai            # week3_rag/d4_demo.py, week4_agents_and_safety/d1_openai_safe.py, week4_agents_and_safety/d2_small_agent.py, week4_agents_and_safety/d2_full_demo.py, week4_agents_and_safety/d3_multi_agent_demo.py, week4_agents_and_safety/d4_toy_calc_tool.py, week4_agents_and_safety/d4_2_tools.py, week4_agents_and_safety/d4_dynamic_tools.py, week4_agents_and_safety/d4_logging_llm_decisions.py, week4_agents_and_safety/d4_full_demo.py (uses the OpenAI SDK directly)
+openai            # week3_rag/d4_demo.py, week4_agents_and_safety/d1_openai_safe.py, week4_agents_and_safety/d2_small_agent.py, week4_agents_and_safety/d2_full_demo.py, week4_agents_and_safety/d3_multi_agent_demo.py, week4_agents_and_safety/d4_toy_calc_tool.py, week4_agents_and_safety/d4_2_tools.py, week4_agents_and_safety/d4_dynamic_tools.py, week4_agents_and_safety/d4_logging_llm_decisions.py, week4_agents_and_safety/d4_full_demo.py, week5_strategy_risk_governance/d2_inference_performance_ex1.py, week5_strategy_risk_governance/d2_inference_performance_ex3.py (uses the OpenAI SDK directly)
 transformers      # week4_agents_and_safety/d1_local_llm_injection.py only (local gpt2 model)
-python-dotenv     # week4_agents_and_safety/d3_multi_agent_demo.py, week4_agents_and_safety/d4_toy_calc_tool.py, week4_agents_and_safety/d4_2_tools.py, week4_agents_and_safety/d4_dynamic_tools.py, week4_agents_and_safety/d4_full_demo.py only (loads OPENAI_API_KEY from a .env file)
+python-dotenv     # week4_agents_and_safety/d3_multi_agent_demo.py, week4_agents_and_safety/d4_toy_calc_tool.py, week4_agents_and_safety/d4_2_tools.py, week4_agents_and_safety/d4_dynamic_tools.py, week4_agents_and_safety/d4_full_demo.py, week5_strategy_risk_governance/d2_inference_performance_ex1.py, week5_strategy_risk_governance/d2_inference_performance_ex3.py only (loads OPENAI_API_KEY from a .env file)
 llama-cpp-python  # week5_strategy_risk_governance/d1_example1.py only (runs a local GGUF model via llama.cpp bindings)
 requests          # week5_strategy_risk_governance/d1_example2.py only (calls a local Ollama server's HTTP API)
 ```
@@ -372,6 +393,16 @@ directory.
 `week5_strategy_risk_governance/d1_example2.py` also needs no API key — it
 calls a local Ollama server instead of a hosted API. It does need Ollama
 installed and running (`ollama serve`) with the `phi` model pulled first.
+
+`week5_strategy_risk_governance/d2_inference_performance_ex1.py` and
+`week5_strategy_risk_governance/d2_inference_performance_ex3.py` also load
+`OPENAI_API_KEY` from a `.env` file (untracked, via `python-dotenv`) —
+create a `.env` file with `OPENAI_API_KEY=your-api-key-here` before running
+them.
+
+`week5_strategy_risk_governance/d2_inference_performance_ex2.py` runs
+entirely locally (a NumPy-simulated forward pass, no LLM call) and needs no
+API key.
 
 `week4_agents_and_safety/d4_open_ai_fun_call.py`, `week4_agents_and_safety/d4_real_trace_example.py`,
 `week4_agents_and_safety/d4_simple_trace_logger.py`, and `week4_agents_and_safety/d4_tool_call_trace_logging.py` don't
