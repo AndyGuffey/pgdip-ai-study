@@ -359,6 +359,23 @@ Click a topic to expand it and see the file-by-file details.
 </details>
 
 <details>
+<summary><strong>Cost-aware & resilient model serving</strong></summary>
+
+- **[week5_strategy_risk_governance/d4_model_serve_ex1.py](week5_strategy_risk_governance/d4_model_serve_ex1.py)** —
+  Confidence-gated SLM→LLM fallback: a cheap small language model answers
+  every prompt with a (faked, for demo purposes) confidence score, and only
+  escalates to a more expensive LLM when confidence falls below a
+  threshold. Prints a per-query trace plus a cost comparison against
+  always using the LLM.
+- **[week5_strategy_risk_governance/d4_model_serve_ex2.py](week5_strategy_risk_governance/d4_model_serve_ex2.py)** —
+  Retry-then-fallback resilience: an unreliable SLM that randomly times
+  out is retried a couple of times before falling back to a slower but
+  dependable LLM, run across multiple trials to show the SLM succeeding
+  sometimes and falling back on others.
+
+</details>
+
+<details>
 <summary><strong>Agent memory patterns</strong></summary>
 
 - **[week6_discovery_design_build/d1_memory_types_ex1.py](week6_discovery_design_build/d1_memory_types_ex1.py)** —
