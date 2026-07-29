@@ -3,8 +3,9 @@
 Running collection of study scripts exploring vector search, embeddings,
 Retrieval-Augmented Generation (RAG), and LLM security, organized by course
 week (`week2_embeddings_and_generation/`, `week3_rag/`,
-`week4_agents_and_safety/`, `week5_strategy_risk_governance/`), with each
-file prefixed by the day it covers within that week (`d1_`, `d2_`, ...).
+`week4_agents_and_safety/`, `week5_strategy_risk_governance/`,
+`week6_discovery_design_build/`), with each file prefixed by the day it
+covers within that week (`d1_`, `d2_`, ...).
 
 ## Topics by file
 
@@ -354,6 +355,25 @@ Click a topic to expand it and see the file-by-file details.
   across simulated chat sessions, and mocked draft/target models comparing
   sequential vs. speculative-decoding generation speed. No API key needed
   — everything is simulated locally.
+
+</details>
+
+<details>
+<summary><strong>Agent memory patterns</strong></summary>
+
+- **[week6_discovery_design_build/d1_memory_types_ex1.py](week6_discovery_design_build/d1_memory_types_ex1.py)** —
+  Contrasts short-term memory (an in-process dict holding just the last
+  message, cleared between sessions) with long-term memory (a user
+  preference persisted to `memory.json` across sessions), combining both
+  in a single chat response.
+- **[week6_discovery_design_build/d1_memory_type_ex2.py](week6_discovery_design_build/d1_memory_type_ex2.py)** —
+  Memory with a Time-To-Live (TTL): each stored value carries an expiry
+  timestamp, and reading it lazily deletes and returns `None` once that
+  timestamp has passed, instead of relying on manual cleanup.
+- **[week6_discovery_design_build/d1_memory_types_ex3.py](week6_discovery_design_build/d1_memory_types_ex3.py)** —
+  Consent-aware memory: every write is gated behind an explicit
+  yes/no prompt asking the user's permission before the value is stored,
+  demonstrated with a mix of consented and declined test data.
 
 </details>
 
