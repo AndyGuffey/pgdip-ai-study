@@ -406,6 +406,12 @@ Click a topic to expand it and see the file-by-file details.
   Dataset versioning via content hashing: MD5-hashes two near-identical
   dataset versions to show a single changed value produces a completely
   different hash, then splits a dataset into train/eval slices.
+- **[week6_discovery_design_build/d2_ml_ops_ex3.py](week6_discovery_design_build/d2_ml_ops_ex3.py)** —
+  Builds on `week6_discovery_design_build/d2_ml_ops_ex2.py`'s dataset
+  hashing: combines a dataset hash with model hyperparameters and a code
+  version into a single short experiment version ID, showing different
+  data/hyperparameters produce different IDs while identical inputs
+  reproduce the same one.
 
 </details>
 
