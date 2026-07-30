@@ -1,4 +1,4 @@
-# Builds on dataset hashing (see week6_discovery_design_build/d2_ml_ops_ex2.py)
+# Builds on dataset hashing (see week6_discovery_design_build/d2_data_versioning_ex2.py)
 # by combining a dataset's hash with model hyperparameters and a code
 # version into a single short experiment version ID — different data or
 # different hyperparameters produce different IDs, while identical inputs
