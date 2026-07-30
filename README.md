@@ -395,13 +395,17 @@ Click a topic to expand it and see the file-by-file details.
 </details>
 
 <details>
-<summary><strong>ML ops: reproducibility</strong></summary>
+<summary><strong>ML ops: reproducibility & dataset versioning</strong></summary>
 
 - **[week6_discovery_design_build/d2_ml_ops_ex1.py](week6_discovery_design_build/d2_ml_ops_ex1.py)** —
   Trains a trivial "model" (the average of 5 random numbers) with and
   without a fixed random seed, showing unseeded runs produce different
   scores each time while seeded runs reproduce the exact same score —
   a minimal illustration of why reproducibility matters in ML ops.
+- **[week6_discovery_design_build/d2_ml_ops_ex2.py](week6_discovery_design_build/d2_ml_ops_ex2.py)** —
+  Dataset versioning via content hashing: MD5-hashes two near-identical
+  dataset versions to show a single changed value produces a completely
+  different hash, then splits a dataset into train/eval slices.
 
 </details>
 
