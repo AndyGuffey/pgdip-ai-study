@@ -394,6 +394,17 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
+<details>
+<summary><strong>ML ops: reproducibility</strong></summary>
+
+- **[week6_discovery_design_build/d2_ml_ops_ex1.py](week6_discovery_design_build/d2_ml_ops_ex1.py)** —
+  Trains a trivial "model" (the average of 5 random numbers) with and
+  without a fixed random seed, showing unseeded runs produce different
+  scores each time while seeded runs reproduce the exact same score —
+  a minimal illustration of why reproducibility matters in ML ops.
+
+</details>
+
 ## Setup
 
 A virtual environment is already set up in `.venv`. To install/update
