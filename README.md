@@ -417,6 +417,12 @@ Click a topic to expand it and see the file-by-file details.
   latency, bias gap) against fixed quality thresholds, run against a
   passing model, an accuracy regression, and a latency regression to show
   how each failure is caught before deployment.
+- **[week6_discovery_design_build/d2_ml_ops_ex5.py](week6_discovery_design_build/d2_ml_ops_ex5.py)** —
+  A fuller regression testing example than `d2_ml_ops_ex4.py`: a mocked
+  sentiment classifier with three versions (baseline, improved,
+  deliberately regressed) is each run over a fixed test set and scored on
+  average confidence/latency against pass/fail thresholds, blocking
+  deployment of the regressed version.
 
 </details>
 
