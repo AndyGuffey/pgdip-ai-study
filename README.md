@@ -395,7 +395,7 @@ Click a topic to expand it and see the file-by-file details.
 </details>
 
 <details>
-<summary><strong>ML ops: reproducibility & dataset versioning</strong></summary>
+<summary><strong>ML ops: reproducibility, versioning & regression testing</strong></summary>
 
 - **[week6_discovery_design_build/d2_ml_ops_ex1.py](week6_discovery_design_build/d2_ml_ops_ex1.py)** —
   Trains a trivial "model" (the average of 5 random numbers) with and
@@ -412,6 +412,11 @@ Click a topic to expand it and see the file-by-file details.
   version into a single short experiment version ID, showing different
   data/hyperparameters produce different IDs while identical inputs
   reproduce the same one.
+- **[week6_discovery_design_build/d2_ml_ops_ex4.py](week6_discovery_design_build/d2_ml_ops_ex4.py)** —
+  ML regression testing: asserts a model's evaluation metrics (accuracy,
+  latency, bias gap) against fixed quality thresholds, run against a
+  passing model, an accuracy regression, and a latency regression to show
+  how each failure is caught before deployment.
 
 </details>
 
