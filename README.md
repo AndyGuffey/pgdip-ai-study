@@ -394,6 +394,38 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
+<details>
+<summary><strong>ML ops: reproducibility, versioning & regression testing</strong></summary>
+
+- **[week6_discovery_design_build/d2_reproducibility_ex1.py](week6_discovery_design_build/d2_reproducibility_ex1.py)** —
+  Trains a trivial "model" (the average of 5 random numbers) with and
+  without a fixed random seed, showing unseeded runs produce different
+  scores each time while seeded runs reproduce the exact same score —
+  a minimal illustration of why reproducibility matters in ML ops.
+- **[week6_discovery_design_build/d2_data_versioning_ex2.py](week6_discovery_design_build/d2_data_versioning_ex2.py)** —
+  Dataset versioning via content hashing: MD5-hashes two near-identical
+  dataset versions to show a single changed value produces a completely
+  different hash, then splits a dataset into train/eval slices.
+- **[week6_discovery_design_build/d2_experiment_versioning_ex3.py](week6_discovery_design_build/d2_experiment_versioning_ex3.py)** —
+  Builds on `week6_discovery_design_build/d2_data_versioning_ex2.py`'s dataset
+  hashing: combines a dataset hash with model hyperparameters and a code
+  version into a single short experiment version ID, showing different
+  data/hyperparameters produce different IDs while identical inputs
+  reproduce the same one.
+- **[week6_discovery_design_build/d2_ml_ops_ex4.py](week6_discovery_design_build/d2_ml_ops_ex4.py)** —
+  ML regression testing: asserts a model's evaluation metrics (accuracy,
+  latency, bias gap) against fixed quality thresholds, run against a
+  passing model, an accuracy regression, and a latency regression to show
+  how each failure is caught before deployment.
+- **[week6_discovery_design_build/d2_ml_ops_ex5.py](week6_discovery_design_build/d2_ml_ops_ex5.py)** —
+  A fuller regression testing example than `d2_ml_ops_ex4.py`: a mocked
+  sentiment classifier with three versions (baseline, improved,
+  deliberately regressed) is each run over a fixed test set and scored on
+  average confidence/latency against pass/fail thresholds, blocking
+  deployment of the regressed version.
+
+</details>
+
 ## Setup
 
 A virtual environment is already set up in `.venv`. To install/update
