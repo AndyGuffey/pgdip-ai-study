@@ -3,7 +3,7 @@
 # before any text is sent to an LLM.
 # Learning purpose: understand redaction as a practical governance
 # technique — building on the classification step in
-# week6_discovery_design_build/d4_ex1.py — for scrubbing sensitive data
+# week6_discovery_design_build/d4_sensitive_data_classification_ex1.py — for scrubbing sensitive data
 # out of prompts prior to an API call.
 
 import re
