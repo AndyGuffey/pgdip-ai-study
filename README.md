@@ -426,6 +426,29 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
+<details>
+<summary><strong>LLM output validation, tracing & A/B testing</strong></summary>
+
+- **[week6_discovery_design_build/d3_output_validation_ex1.py](week6_discovery_design_build/d3_output_validation_ex1.py)** —
+  Checks whether a simulated LLM output is valid JSON containing an
+  `"answer"` key, contrasting a well-formed structured response against a
+  plain-text one that fails the check.
+- **[week6_discovery_design_build/d3_output_guardrails_ex2.py](week6_discovery_design_build/d3_output_guardrails_ex2.py)** —
+  Two independent guardrail checks for LLM output: a banned-word content
+  safety filter and a min/max length validator, each tested against
+  passing and failing example strings.
+- **[week6_discovery_design_build/d3_promptlayer_tracing_ex3.py](week6_discovery_design_build/d3_promptlayer_tracing_ex3.py)** —
+  Minimal PromptLayer + OpenAI integration: wraps the OpenAI client with
+  `promptlayer.openai.OpenAI()` so a single `gpt-4o-mini` call is
+  automatically logged (with a custom tag) to the PromptLayer dashboard.
+  Requires an OpenAI API key and a PromptLayer API key.
+- **[week6_discovery_design_build/d3_ab_testing_traffic_split_ex4.py](week6_discovery_design_build/d3_ab_testing_traffic_split_ex4.py)** —
+  Randomly routes 100 requests roughly 50/50 between a "new" and "old"
+  prompt version and tallies how many went to each — the basic mechanics
+  of A/B traffic splitting for prompts, with no LLM call involved.
+
+</details>
+
 ## Setup
 
 A virtual environment is already set up in `.venv`. To install/update
@@ -451,7 +474,8 @@ langchain-huggingface
 faiss-cpu
 chromadb        # week2_embeddings_and_generation/d4_vector_db_example3.py only
 langchain-openai  # week3_rag/d1_rag_demo.py and week3_rag/d2_rag2_demo.py only
-openai            # week3_rag/d4_demo.py, week4_agents_and_safety/d1_openai_safe.py, week4_agents_and_safety/d2_small_agent.py, week4_agents_and_safety/d2_full_demo.py, week4_agents_and_safety/d3_multi_agent_demo.py, week4_agents_and_safety/d4_toy_calc_tool.py, week4_agents_and_safety/d4_2_tools.py, week4_agents_and_safety/d4_dynamic_tools.py, week4_agents_and_safety/d4_logging_llm_decisions.py, week4_agents_and_safety/d4_full_demo.py, week5_strategy_risk_governance/d2_inference_performance_ex1.py, week5_strategy_risk_governance/d2_inference_performance_ex3.py, week5_strategy_risk_governance/d3_speculative_decoding_openai.py (uses the OpenAI SDK directly)
+openai            # week3_rag/d4_demo.py, week4_agents_and_safety/d1_openai_safe.py, week4_agents_and_safety/d2_small_agent.py, week4_agents_and_safety/d2_full_demo.py, week4_agents_and_safety/d3_multi_agent_demo.py, week4_agents_and_safety/d4_toy_calc_tool.py, week4_agents_and_safety/d4_2_tools.py, week4_agents_and_safety/d4_dynamic_tools.py, week4_agents_and_safety/d4_logging_llm_decisions.py, week4_agents_and_safety/d4_full_demo.py, week5_strategy_risk_governance/d2_inference_performance_ex1.py, week5_strategy_risk_governance/d2_inference_performance_ex3.py, week5_strategy_risk_governance/d3_speculative_decoding_openai.py, week6_discovery_design_build/d3_promptlayer_tracing_ex3.py (uses the OpenAI SDK directly)
+promptlayer       # week6_discovery_design_build/d3_promptlayer_tracing_ex3.py only (wraps the OpenAI client for prompt tracing/observability)
 transformers      # week4_agents_and_safety/d1_local_llm_injection.py only (local gpt2 model)
 python-dotenv     # week4_agents_and_safety/d3_multi_agent_demo.py, week4_agents_and_safety/d4_toy_calc_tool.py, week4_agents_and_safety/d4_2_tools.py, week4_agents_and_safety/d4_dynamic_tools.py, week4_agents_and_safety/d4_full_demo.py, week5_strategy_risk_governance/d2_inference_performance_ex1.py, week5_strategy_risk_governance/d2_inference_performance_ex3.py, week5_strategy_risk_governance/d3_speculative_decoding_openai.py only (loads OPENAI_API_KEY from a .env file)
 llama-cpp-python  # week5_strategy_risk_governance/d1_example1.py only (runs a local GGUF model via llama.cpp bindings)
@@ -516,6 +540,12 @@ call the OpenAI API at all, so none of them need a key.
 
 `week4_agents_and_safety/d4_open_ai_fun_call.py` only defines a tool schema — it doesn't call the
 OpenAI API and needs no key.
+
+`week6_discovery_design_build/d3_promptlayer_tracing_ex3.py` needs both
+an OpenAI API key and a PromptLayer API key — it hardcodes
+`OPENAI_API_KEY` and `PROMPTLAYER_API_KEY` placeholder variables near the
+top of the file; replace them with real values (or refactor to load from
+environment/`.env`) before running. **Do not commit real API keys.**
 
 ## Running a script
 
