@@ -3,7 +3,7 @@
 # OpenAI call with a system prompt instructing the model to respond
 # helpfully without referencing the redaction.
 # Learning purpose: see local pre-processing/redaction (building on
-# week6_discovery_design_build/d4_ex2.py) applied end-to-end against a
+# week6_discovery_design_build/d4_pii_redaction_ex2.py) applied end-to-end against a
 # live LLM call, rather than just redacting in isolation. Requires an
 # OpenAI API key.
 
