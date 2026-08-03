@@ -491,7 +491,7 @@ Click a topic to expand it and see the file-by-file details.
 </details>
 
 <details>
-<summary><strong>Content fingerprinting & provenance</strong></summary>
+<summary><strong>Content fingerprinting, watermarking & provenance</strong></summary>
 
 - **[week7_discovery_design_build_2/d2_content_fingerprint_ex1.py](week7_discovery_design_build_2/d2_content_fingerprint_ex1.py)** —
   Computes a SHA-256 fingerprint of a piece of content — a fixed-length
@@ -501,6 +501,24 @@ Click a topic to expand it and see the file-by-file details.
   content with metadata (creator, timestamp), serializes it
   deterministically (sorted keys), then fingerprints the whole thing with
   the same SHA-256 approach as `d2_content_fingerprint_ex1.py`.
+- **[week7_discovery_design_build_2/d2_text_watermark_ex3.py](week7_discovery_design_build_2/d2_text_watermark_ex3.py)** —
+  Embeds a simple watermark into AI-generated text by inserting a marker
+  character after every 7th word, contrasting watermarking (a signal
+  embedded in the content) with the fingerprinting/provenance approach
+  above (a hash computed alongside the content).
+- **[week7_discovery_design_build_2/d2_watermark_detection_ex4.py](week7_discovery_design_build_2/d2_watermark_detection_ex4.py)** —
+  Detects the watermark from `d2_text_watermark_ex3.py` by measuring
+  marker-token density against a threshold — an approximate signal
+  rather than a cryptographic guarantee.
+- **[week7_discovery_design_build_2/d2_watermark_removal_ex5.py](week7_discovery_design_build_2/d2_watermark_removal_ex5.py)** —
+  Strips the watermark marker and re-runs the `d2_watermark_detection_ex4.py`
+  detector against the cleaned text, showing this style of watermarking
+  is trivially defeated by a simple find-and-replace.
+- **[week7_discovery_design_build_2/d2_provenance_badge_ex6.py](week7_discovery_design_build_2/d2_provenance_badge_ex6.py)** —
+  Turns a provenance record's fields (origin, watermark confidence,
+  integrity-verified flag) into human-readable badges/labels — the
+  UI-facing summary layer on top of the fingerprinting and watermarking
+  building blocks above.
 
 </details>
 
