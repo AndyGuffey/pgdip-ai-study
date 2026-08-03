@@ -4,8 +4,9 @@ Running collection of study scripts exploring vector search, embeddings,
 Retrieval-Augmented Generation (RAG), and LLM security, organized by course
 week (`week2_embeddings_and_generation/`, `week3_rag/`,
 `week4_agents_and_safety/`, `week5_strategy_risk_governance/`,
-`week6_discovery_design_build/`), with each file prefixed by the day it
-covers within that week (`d1_`, `d2_`, ...).
+`week6_discovery_design_build/`, `week7_discovery_design_build_2/`), with
+each file prefixed by the day it covers within that week (`d1_`, `d2_`,
+...).
 
 ## Topics by file
 
@@ -467,6 +468,25 @@ Click a topic to expand it and see the file-by-file details.
   OpenAI call with a system prompt instructing the model to respond
   helpfully without referencing the redaction. Requires an OpenAI API
   key.
+
+</details>
+
+<details>
+<summary><strong>AI risk classification & change auditing</strong></summary>
+
+- **[week7_discovery_design_build_2/d1_risk_classification_ex1.py](week7_discovery_design_build_2/d1_risk_classification_ex1.py)** —
+  Classifies a use case as HIGH_RISK or LOW_RISK using a single hardcoded
+  list of high-risk domains (medical, finance, education), with no other
+  context considered.
+- **[week7_discovery_design_build_2/d1_contextual_risk_classification_ex2.py](week7_discovery_design_build_2/d1_contextual_risk_classification_ex2.py)** —
+  Extends the baseline classifier from `d1_risk_classification_ex1.py`
+  with contextual risk factors — user type, deployment region, data
+  sensitivity, and autonomy level — bumping to HIGH_RISK if any single
+  strong factor is present.
+- **[week7_discovery_design_build_2/d1_change_audit_log_ex3.py](week7_discovery_design_build_2/d1_change_audit_log_ex3.py)** —
+  Maintains an in-memory audit log of changes to AI system components
+  (prompts, models), recording the time, version, reason, owner, and the
+  user who made each change, then queries the log by component.
 
 </details>
 
