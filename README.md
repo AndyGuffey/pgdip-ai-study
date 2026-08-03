@@ -490,6 +490,20 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
+<details>
+<summary><strong>Content fingerprinting & provenance</strong></summary>
+
+- **[week7_discovery_design_build_2/d2_content_fingerprint_ex1.py](week7_discovery_design_build_2/d2_content_fingerprint_ex1.py)** —
+  Computes a SHA-256 fingerprint of a piece of content — a fixed-length
+  hash that changes completely if the content changes at all.
+- **[week7_discovery_design_build_2/d2_provenance_record_ex2.py](week7_discovery_design_build_2/d2_provenance_record_ex2.py)** —
+  Builds a provenance record for AI-generated content: bundles the
+  content with metadata (creator, timestamp), serializes it
+  deterministically (sorted keys), then fingerprints the whole thing with
+  the same SHA-256 approach as `d2_content_fingerprint_ex1.py`.
+
+</details>
+
 ## Setup
 
 A virtual environment is already set up in `.venv`. To install/update
