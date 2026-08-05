@@ -544,7 +544,7 @@ Click a topic to expand it and see the file-by-file details.
 </details>
 
 <details>
-<summary><strong>Feature correlation analysis</strong></summary>
+<summary><strong>Model explainability</strong></summary>
 
 - **[week7_discovery_design_build_2/d4_feature_correlation_ex1.py](week7_discovery_design_build_2/d4_feature_correlation_ex1.py)** —
   Computes Pearson correlation between each feature (income, debt) and a
@@ -552,6 +552,11 @@ Click a topic to expand it and see the file-by-file details.
   pandas' `corr()` — a first step in model explainability/fairness
   review, spotting which features are most associated with an outcome
   before checking a model for bias.
+- **[week7_discovery_design_build_2/d4_decision_explanation_ex2.py](week7_discovery_design_build_2/d4_decision_explanation_ex2.py)** —
+  Explains a rule-based loan decision three ways with increasing polish:
+  structured reason codes (a list), a hand-templated natural-language
+  sentence, and an OpenAI-refined version of the same reasons turned into
+  a short, friendly explanation. Requires an OpenAI API key.
 
 </details>
 
@@ -581,10 +586,10 @@ langchain-huggingface
 faiss-cpu
 chromadb        # week2_embeddings_and_generation/d4_vector_db_example3.py only
 langchain-openai  # week3_rag/d1_rag_demo.py and week3_rag/d2_rag2_demo.py only
-openai            # week3_rag/d4_demo.py, week4_agents_and_safety/d1_openai_safe.py, week4_agents_and_safety/d2_small_agent.py, week4_agents_and_safety/d2_full_demo.py, week4_agents_and_safety/d3_multi_agent_demo.py, week4_agents_and_safety/d4_toy_calc_tool.py, week4_agents_and_safety/d4_2_tools.py, week4_agents_and_safety/d4_dynamic_tools.py, week4_agents_and_safety/d4_logging_llm_decisions.py, week4_agents_and_safety/d4_full_demo.py, week5_strategy_risk_governance/d2_inference_performance_ex1.py, week5_strategy_risk_governance/d2_inference_performance_ex3.py, week5_strategy_risk_governance/d3_speculative_decoding_openai.py, week6_discovery_design_build/d3_promptlayer_tracing_ex3.py, week6_discovery_design_build/d4_redaction_llm_pipeline_ex3.py (uses the OpenAI SDK directly)
+openai            # week3_rag/d4_demo.py, week4_agents_and_safety/d1_openai_safe.py, week4_agents_and_safety/d2_small_agent.py, week4_agents_and_safety/d2_full_demo.py, week4_agents_and_safety/d3_multi_agent_demo.py, week4_agents_and_safety/d4_toy_calc_tool.py, week4_agents_and_safety/d4_2_tools.py, week4_agents_and_safety/d4_dynamic_tools.py, week4_agents_and_safety/d4_logging_llm_decisions.py, week4_agents_and_safety/d4_full_demo.py, week5_strategy_risk_governance/d2_inference_performance_ex1.py, week5_strategy_risk_governance/d2_inference_performance_ex3.py, week5_strategy_risk_governance/d3_speculative_decoding_openai.py, week6_discovery_design_build/d3_promptlayer_tracing_ex3.py, week6_discovery_design_build/d4_redaction_llm_pipeline_ex3.py, week7_discovery_design_build_2/d4_decision_explanation_ex2.py (uses the OpenAI SDK directly)
 promptlayer       # week6_discovery_design_build/d3_promptlayer_tracing_ex3.py only (wraps the OpenAI client for prompt tracing/observability)
 transformers      # week4_agents_and_safety/d1_local_llm_injection.py only (local gpt2 model)
-python-dotenv     # week4_agents_and_safety/d3_multi_agent_demo.py, week4_agents_and_safety/d4_toy_calc_tool.py, week4_agents_and_safety/d4_2_tools.py, week4_agents_and_safety/d4_dynamic_tools.py, week4_agents_and_safety/d4_full_demo.py, week5_strategy_risk_governance/d2_inference_performance_ex1.py, week5_strategy_risk_governance/d2_inference_performance_ex3.py, week5_strategy_risk_governance/d3_speculative_decoding_openai.py, week6_discovery_design_build/d4_redaction_llm_pipeline_ex3.py only (loads OPENAI_API_KEY from a .env file)
+python-dotenv     # week4_agents_and_safety/d3_multi_agent_demo.py, week4_agents_and_safety/d4_toy_calc_tool.py, week4_agents_and_safety/d4_2_tools.py, week4_agents_and_safety/d4_dynamic_tools.py, week4_agents_and_safety/d4_full_demo.py, week5_strategy_risk_governance/d2_inference_performance_ex1.py, week5_strategy_risk_governance/d2_inference_performance_ex3.py, week5_strategy_risk_governance/d3_speculative_decoding_openai.py, week6_discovery_design_build/d4_redaction_llm_pipeline_ex3.py, week7_discovery_design_build_2/d4_decision_explanation_ex2.py only (loads OPENAI_API_KEY from a .env file)
 llama-cpp-python  # week5_strategy_risk_governance/d1_example1.py only (runs a local GGUF model via llama.cpp bindings)
 requests          # week5_strategy_risk_governance/d1_example2.py only (calls a local Ollama server's HTTP API)
 ```
@@ -662,6 +667,15 @@ error if it's not set — create a `.env` file with
 `week6_discovery_design_build/d4_sensitive_data_classification_ex1.py` and `d4_pii_redaction_ex2.py` run entirely
 locally (regex-based classification and redaction, no LLM calls) and
 need no API key.
+
+`week7_discovery_design_build_2/d4_decision_explanation_ex2.py` loads
+`OPENAI_API_KEY` from a `.env` file (untracked, via `python-dotenv`) and
+fails fast with a clear error if it's not set — create a `.env` file with
+`OPENAI_API_KEY=your-api-key-here` before running it.
+
+`week7_discovery_design_build_2/d4_feature_correlation_ex1.py` runs
+entirely locally (pandas correlation on a hardcoded dataset, no LLM call)
+and needs no API key.
 
 ## Running a script
 
