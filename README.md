@@ -522,6 +522,27 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
+<details>
+<summary><strong>Bias & fairness metrics</strong></summary>
+
+- **[week7_discovery_design_build_2/d3_disparity_ratio_ex1.py](week7_discovery_design_build_2/d3_disparity_ratio_ex1.py)** —
+  Compares approval rates between two groups and computes a disparity
+  ratio (minority group rate / majority group rate), flagging potential
+  bias if it falls below 80% — a simple version of the "four-fifths
+  rule" used in disparate-impact analysis.
+- **[week7_discovery_design_build_2/d3_demographic_parity_gap_ex2.py](week7_discovery_design_build_2/d3_demographic_parity_gap_ex2.py)** —
+  Measures the demographic parity gap for loan approvals across two age
+  groups — the raw difference between group approval rates, as an
+  alternative to the ratio-based metric in `d3_disparity_ratio_ex1.py`.
+- **[week7_discovery_design_build_2/d3_counterfactual_fairness_ex3.py](week7_discovery_design_build_2/d3_counterfactual_fairness_ex3.py)** —
+  Tests counterfactual fairness: runs a rule-based decision model on a
+  person's data, then on a counterfactual version where only the
+  protected attribute (group) is changed, and compares the outcomes —
+  an individual-level check that complements the aggregate metrics
+  above.
+
+</details>
+
 ## Setup
 
 A virtual environment is already set up in `.venv`. To install/update
