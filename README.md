@@ -543,6 +543,18 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
+<details>
+<summary><strong>Feature correlation analysis</strong></summary>
+
+- **[week7_discovery_design_build_2/d4_feature_correlation_ex1.py](week7_discovery_design_build_2/d4_feature_correlation_ex1.py)** —
+  Computes Pearson correlation between each feature (income, debt) and a
+  binary loan-approval outcome in a tiny hand-built dataset, using
+  pandas' `corr()` — a first step in model explainability/fairness
+  review, spotting which features are most associated with an outcome
+  before checking a model for bias.
+
+</details>
+
 ## Setup
 
 A virtual environment is already set up in `.venv`. To install/update
@@ -561,6 +573,7 @@ torch
 numpy
 networkx
 matplotlib
+pandas          # week7_discovery_design_build_2/d3_disparity_ratio_ex1.py, week7_discovery_design_build_2/d3_demographic_parity_gap_ex2.py, week7_discovery_design_build_2/d3_counterfactual_fairness_ex3.py, week7_discovery_design_build_2/d4_feature_correlation_ex1.py only
 langchain-core
 langchain-text-splitters
 langchain-community
