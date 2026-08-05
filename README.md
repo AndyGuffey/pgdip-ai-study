@@ -557,6 +557,11 @@ Click a topic to expand it and see the file-by-file details.
   structured reason codes (a list), a hand-templated natural-language
   sentence, and an OpenAI-refined version of the same reasons turned into
   a short, friendly explanation. Requires an OpenAI API key.
+- **[week7_discovery_design_build_2/d4_explainable_prediction_response_ex3.py](week7_discovery_design_build_2/d4_explainable_prediction_response_ex3.py)** —
+  Packages a rule-based prediction into one structured API response: the
+  decision, a fake confidence score, developer-facing reason codes, an
+  end-user-friendly explanation string, and metadata flagging the
+  explanation as a heuristic summary rather than a full model rationale.
 
 </details>
 
