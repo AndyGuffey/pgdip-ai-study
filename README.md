@@ -565,7 +565,10 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
-## Setup
+## Getting started
+
+<details>
+<summary><strong>Setup</strong></summary>
 
 A virtual environment is already set up in `.venv`. To install/update
 dependencies:
@@ -599,7 +602,10 @@ llama-cpp-python  # week5_strategy_risk_governance/d1_example1.py only (runs a l
 requests          # week5_strategy_risk_governance/d1_example2.py only (calls a local Ollama server's HTTP API)
 ```
 
-### API keys
+</details>
+
+<details>
+<summary><strong>API keys</strong></summary>
 
 `week3_rag/d1_rag_demo.py`, `week3_rag/d2_rag2_demo.py`, `week3_rag/d4_demo.py`,
 `week4_agents_and_safety/d1_openai_safe.py`, `week4_agents_and_safety/d2_small_agent.py`, and `week4_agents_and_safety/d2_full_demo.py`
@@ -681,6 +687,8 @@ fails fast with a clear error if it's not set — create a `.env` file with
 `week7_discovery_design_build_2/d4_feature_correlation_ex1.py` runs
 entirely locally (pandas correlation on a hardcoded dataset, no LLM call)
 and needs no API key.
+
+</details>
 
 ## Running a script
 
