@@ -4,9 +4,9 @@ Running collection of study scripts exploring vector search, embeddings,
 Retrieval-Augmented Generation (RAG), and LLM security, organized by course
 week (`week2_embeddings_and_generation/`, `week3_rag/`,
 `week4_agents_and_safety/`, `week5_strategy_risk_governance/`,
-`week6_discovery_design_build/`, `week7_discovery_design_build_2/`), with
-each file prefixed by the day it covers within that week (`d1_`, `d2_`,
-...).
+`week6_discovery_design_build/`, `week7_discovery_design_build_2/`,
+`week8_discovery_design_build_3/`), with each file prefixed by the day it
+covers within that week (`d1_`, `d2_`, ...).
 
 ## Topics by file
 
@@ -562,6 +562,17 @@ Click a topic to expand it and see the file-by-file details.
   decision, a fake confidence score, developer-facing reason codes, an
   end-user-friendly explanation string, and metadata flagging the
   explanation as a heuristic summary rather than a full model rationale.
+
+</details>
+
+<details>
+<summary><strong>LLM safety baselines: naive vs. guardrailed compliance</strong></summary>
+
+- **[week8_discovery_design_build_3/d1_naive_compliant_model.py](week8_discovery_design_build_3/d1_naive_compliant_model.py)** —
+  A "model" with no safety or refusal logic: it unconditionally agrees to
+  do whatever the prompt asks (`"Sure! Here's how you do it: ..."`), run in
+  an interactive chat loop. Intended as a naive baseline to contrast
+  against a guardrailed version, not a template to copy.
 
 </details>
 
