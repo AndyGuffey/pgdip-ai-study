@@ -568,28 +568,23 @@ Click a topic to expand it and see the file-by-file details.
 <details>
 <summary><strong>LLM safety baselines: naive vs. guardrailed compliance</strong></summary>
 
-- **[week8_discovery_design_build_3/d1_naive_compliant_model.py](week8_discovery_design_build_3/d1_naive_compliant_model.py)** —
+- **[week8_discovery_design_build_3/d1_naive_compliant_model_ex1.py](week8_discovery_design_build_3/d1_naive_compliant_model_ex1.py)** —
   A "model" with no safety or refusal logic: it unconditionally agrees to
   do whatever the prompt asks (`"Sure! Here's how you do it: ..."`), run in
   an interactive chat loop. Intended as a naive baseline to contrast
   against a guardrailed version, not a template to copy.
-- **[week8_discovery_design_build_3/d1_keyword_guardrail_model.py](week8_discovery_design_build_3/d1_keyword_guardrail_model.py)** —
+- **[week8_discovery_design_build_3/d1_keyword_guardrail_model_ex2.py](week8_discovery_design_build_3/d1_keyword_guardrail_model_ex2.py)** —
   Adds a simple guardrail on top of the naive baseline above: a hardcoded
   list of banned keywords (`hack`, `kill`) is checked against the prompt,
   refusing with a fixed message if one matches and otherwise responding
   same as before, run in the same interactive chat loop shape.
-
-</details>
-
-<details>
-<summary><strong>Heuristic risk-based confidence gating</strong></summary>
-
-- **[week8_discovery_design_build_3/d2_confidence_gated_model.py](week8_discovery_design_build_3/d2_confidence_gated_model.py)** —
-  Estimates a confidence score for a prompt from keyword heuristics alone
-  (risky-domain keywords like `medical`/`finance`/`legal` lower it,
-  simple/tutorial-style keywords raise it) and withholds an answer below a
-  0.6 threshold — a cruder, no-retrieval variant of the similarity-based
-  confidence gating in `week3_rag/d4_demo.py`.
+- **[week8_discovery_design_build_3/d1_confidence_gated_model_ex3.py](week8_discovery_design_build_3/d1_confidence_gated_model_ex3.py)** —
+  A third variant alongside the two above: instead of a fixed keyword
+  refusal, estimates a confidence score for the prompt from keyword
+  heuristics alone (risky-domain keywords like `medical`/`finance`/`legal`
+  lower it, simple/tutorial-style keywords raise it) and withholds an
+  answer below a 0.6 threshold — a cruder, no-retrieval variant of the
+  similarity-based confidence gating in `week3_rag/d4_demo.py`.
 
 </details>
 
