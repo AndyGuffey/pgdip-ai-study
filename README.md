@@ -581,6 +581,18 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
+<details>
+<summary><strong>Heuristic risk-based confidence gating</strong></summary>
+
+- **[week8_discovery_design_build_3/d2_confidence_gated_model.py](week8_discovery_design_build_3/d2_confidence_gated_model.py)** —
+  Estimates a confidence score for a prompt from keyword heuristics alone
+  (risky-domain keywords like `medical`/`finance`/`legal` lower it,
+  simple/tutorial-style keywords raise it) and withholds an answer below a
+  0.6 threshold — a cruder, no-retrieval variant of the similarity-based
+  confidence gating in `week3_rag/d4_demo.py`.
+
+</details>
+
 ## Getting started
 
 <details>
