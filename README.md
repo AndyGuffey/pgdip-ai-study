@@ -573,6 +573,11 @@ Click a topic to expand it and see the file-by-file details.
   do whatever the prompt asks (`"Sure! Here's how you do it: ..."`), run in
   an interactive chat loop. Intended as a naive baseline to contrast
   against a guardrailed version, not a template to copy.
+- **[week8_discovery_design_build_3/d1_keyword_guardrail_model.py](week8_discovery_design_build_3/d1_keyword_guardrail_model.py)** —
+  Adds a simple guardrail on top of the naive baseline above: a hardcoded
+  list of banned keywords (`hack`, `kill`) is checked against the prompt,
+  refusing with a fixed message if one matches and otherwise responding
+  same as before, run in the same interactive chat loop shape.
 
 </details>
 
