@@ -639,6 +639,12 @@ Click a topic to expand it and see the file-by-file details.
   `finance_team`, `ticket_created` → `support_team`, else a default
   queue) — a dispatch step that complements the queue-based worker in
   `d2_event_queue_worker_ex3.py`.
+- **[week8_discovery_design_build_3/d2_enterprise_tool_registry_ex5.py](week8_discovery_design_build_3/d2_enterprise_tool_registry_ex5.py)** —
+  Tool registry shape for enterprise-system actions an agent could call
+  (`get_customer`, `create_ticket`), listing each tool's description and
+  input schema with no execution logic wired up — the schema-only
+  counterpart to the runnable tool examples in
+  `week4_agents_and_safety/d4_*`.
 
 </details>
 
