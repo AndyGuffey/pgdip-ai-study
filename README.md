@@ -585,6 +585,18 @@ Click a topic to expand it and see the file-by-file details.
   lower it, simple/tutorial-style keywords raise it) and withholds an
   answer below a 0.6 threshold — a cruder, no-retrieval variant of the
   similarity-based confidence gating in `week3_rag/d4_demo.py`.
+- **[week8_discovery_design_build_3/d1_prompt_sanitization_ex4.py](week8_discovery_design_build_3/d1_prompt_sanitization_ex4.py)** —
+  A fourth variant, moving the guardrail to the input side: regex-matches
+  the incoming prompt against known jailbreak-style phrasing (`"ignore
+  previous instructions"`, `"jailbreak"`, `"do anything now"`) and blocks
+  it outright before it would reach a model, otherwise passing the
+  stripped prompt through.
+- **[week8_discovery_design_build_3/d1_output_content_filter_ex5.py](week8_discovery_design_build_3/d1_output_content_filter_ex5.py)** —
+  A fifth variant, moving the guardrail to the output side: scans an
+  already-generated model response for banned words (`violence`,
+  `explosive`) and swaps in a fixed refusal message if one is found,
+  otherwise passing the response through unchanged — complementing the
+  input-side check in `d1_prompt_sanitization_ex4.py`.
 
 </details>
 
