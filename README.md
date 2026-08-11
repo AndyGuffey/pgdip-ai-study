@@ -613,6 +613,25 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
+<details>
+<summary><strong>Enterprise integration & API security for LLM services</strong></summary>
+
+- **[week8_discovery_design_build_3/d2_api_key_auth_ex1.py](week8_discovery_design_build_3/d2_api_key_auth_ex1.py)** —
+  Minimal FastAPI service exposing a mock `/summarize` endpoint gated
+  behind a static API key: requests must send a matching `X-API-Key`
+  header or get a 401, otherwise the (mocked) summary is returned.
+  Requires `fastapi` and `uvicorn` (not yet in `requirements.txt` — install
+  with `./.venv/bin/pip install fastapi uvicorn`) and is run with
+  `./.venv/bin/uvicorn week8_discovery_design_build_3.d2_api_key_auth_ex1:app --reload`
+  rather than as a plain script.
+- **[week8_discovery_design_build_3/d2_crm_enriched_summary_ex2.py](week8_discovery_design_build_3/d2_crm_enriched_summary_ex2.py)** —
+  Mocks pulling structured data from an external system (a CRM lookup by
+  customer ID) and folding it into an AI-facing summary string — the
+  enterprise-integration counterpart to `d2_api_key_auth_ex1.py`'s
+  access-control concern.
+
+</details>
+
 ## Getting started
 
 <details>
