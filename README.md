@@ -634,6 +634,11 @@ Click a topic to expand it and see the file-by-file details.
   `payment_failed`) are published onto a `queue.Queue`, and an AI worker
   drains and processes them asynchronously instead of being called
   directly per request.
+- **[week8_discovery_design_build_3/d2_event_router_ex4.py](week8_discovery_design_build_3/d2_event_router_ex4.py)** —
+  Routes an event to a handling team by type (`payment_failed` →
+  `finance_team`, `ticket_created` → `support_team`, else a default
+  queue) — a dispatch step that complements the queue-based worker in
+  `d2_event_queue_worker_ex3.py`.
 
 </details>
 
