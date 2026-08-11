@@ -629,6 +629,11 @@ Click a topic to expand it and see the file-by-file details.
   customer ID) and folding it into an AI-facing summary string — the
   enterprise-integration counterpart to `d2_api_key_auth_ex1.py`'s
   access-control concern.
+- **[week8_discovery_design_build_3/d2_event_queue_worker_ex3.py](week8_discovery_design_build_3/d2_event_queue_worker_ex3.py)** —
+  Event-driven integration pattern: events (`ticket_created`,
+  `payment_failed`) are published onto a `queue.Queue`, and an AI worker
+  drains and processes them asynchronously instead of being called
+  directly per request.
 
 </details>
 
