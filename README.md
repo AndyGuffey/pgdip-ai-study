@@ -600,6 +600,19 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
+<details>
+<summary><strong>Preference optimization (DPO)</strong></summary>
+
+- **[week8_discovery_design_build_3/d1_toy_dpo_update_ex7.py](week8_discovery_design_build_3/d1_toy_dpo_update_ex7.py)** —
+  Toy illustration of Direct Preference Optimization: given a chosen and a
+  rejected response to a risky prompt, nudges the policy's own preference
+  score for the chosen response up and the rejected one down by a fixed
+  step — a different mechanism from the rule-based guardrails above
+  (ex1-ex5), shaping the policy itself rather than filtering its
+  input/output.
+
+</details>
+
 ## Getting started
 
 <details>
