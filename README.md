@@ -645,6 +645,10 @@ Click a topic to expand it and see the file-by-file details.
   input schema with no execution logic wired up — the schema-only
   counterpart to the runnable tool examples in
   `week4_agents_and_safety/d4_*`.
+- **[week8_discovery_design_build_3/d2_capability_based_tool_selection_ex6.py](week8_discovery_design_build_3/d2_capability_based_tool_selection_ex6.py)** —
+  Tags each tool from `d2_enterprise_tool_registry_ex5.py` with a
+  read/write capability and selects a tool by matching capability rather
+  than by name — a coarse access-control layer on top of tool selection.
 
 </details>
 
