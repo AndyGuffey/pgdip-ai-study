@@ -28,6 +28,7 @@ transformers==5.12.1
 python-dotenv==1.2.2
 
 # Needed only for week2_embeddings_and_generation/d1_sentiment_model_comparison.py
+# and week8_discovery_design_build_3/d3_dataset_sample_loading_ex1.py
 datasets==5.0.0
 pandas==3.0.3
 

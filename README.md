@@ -652,6 +652,16 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
+<details>
+<summary><strong>Dataset loading & preparation</strong></summary>
+
+- **[week8_discovery_design_build_3/d3_dataset_sample_loading_ex1.py](week8_discovery_design_build_3/d3_dataset_sample_loading_ex1.py)** —
+  Loads a small slice of the IMDB dataset (`train[:5%]`) via Hugging Face
+  `datasets` and inspects its structure and first few rows — no training
+  or evaluation, just dataset loading mechanics.
+
+</details>
+
 ## Getting started
 
 <details>
@@ -687,6 +697,7 @@ transformers      # week4_agents_and_safety/d1_local_llm_injection.py only (loca
 python-dotenv     # week4_agents_and_safety/d3_multi_agent_demo.py, week4_agents_and_safety/d4_toy_calc_tool.py, week4_agents_and_safety/d4_2_tools.py, week4_agents_and_safety/d4_dynamic_tools.py, week4_agents_and_safety/d4_full_demo.py, week5_strategy_risk_governance/d2_inference_performance_ex1.py, week5_strategy_risk_governance/d2_inference_performance_ex3.py, week5_strategy_risk_governance/d3_speculative_decoding_openai.py, week6_discovery_design_build/d4_redaction_llm_pipeline_ex3.py, week7_discovery_design_build_2/d4_decision_explanation_ex2.py only (loads OPENAI_API_KEY from a .env file)
 llama-cpp-python  # week5_strategy_risk_governance/d1_example1.py only (runs a local GGUF model via llama.cpp bindings)
 requests          # week5_strategy_risk_governance/d1_example2.py only (calls a local Ollama server's HTTP API)
+datasets          # week2_embeddings_and_generation/d1_sentiment_model_comparison.py and week8_discovery_design_build_3/d3_dataset_sample_loading_ex1.py only
 ```
 
 </details>
