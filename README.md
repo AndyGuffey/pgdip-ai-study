@@ -660,6 +660,11 @@ Click a topic to expand it and see the file-by-file details.
   Loads a small slice of the IMDB dataset (`train[:5%]`) via Hugging Face
   `datasets` and inspects its structure and first few rows — no training
   or evaluation, just dataset loading mechanics.
+- **[week8_discovery_design_build_3/d3_clean_and_filter_dataset_ex2.py](week8_discovery_design_build_3/d3_clean_and_filter_dataset_ex2.py)** —
+  Builds on `d3_dataset_sample_loading_ex1.py` with a map/filter transform
+  pipeline: lowercases and strips each review's text, then drops reviews
+  under 50 characters, printing the original vs. cleaned text for
+  comparison (and a fallback message if filtering leaves nothing).
 
 </details>
 
