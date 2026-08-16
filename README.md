@@ -668,6 +668,17 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
+<details>
+<summary><strong>Fine-tuning vs. RAG</strong></summary>
+
+- **[week8_discovery_design_build_3/d3_finetune_vs_rag_comparison_ex3.py](week8_discovery_design_build_3/d3_finetune_vs_rag_comparison_ex3.py)** —
+  Contrasts two ways of adapting a model's answer to the same question: a
+  fine-tuning-style response that only changes tone/style (no new facts),
+  versus a RAG-style response grounded in a retrieved knowledge-base
+  snippet.
+
+</details>
+
 ## Getting started
 
 <details>
