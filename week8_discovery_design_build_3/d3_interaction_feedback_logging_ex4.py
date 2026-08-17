@@ -1,0 +1,43 @@
+# Logs each prompt/context/response along with user thumbs-up/down
+# feedback, then aggregates it into a small summary — the kind of data a
+# RAG or fine-tuning pipeline would use to spot weak responses.
+interaction_log = []
+
+def log_interaction(prompt, context, response, user_feedback=None):
+    """Log the interaction details."""
+    interaction_log.append({
+        "prompt": prompt,
+        "context_used": context,
+        "response": response,
+        "feedback": user_feedback
+    })
+
+def summarize_log(log):
+    """Very small summary to show how logged data can be used."""
+    total = len(log)
+    positive = sum(1 for e in log if e["feedback"] == "👍")
+    negative = sum(1 for e in log if e["feedback"] == "👎")
+    return {
+        "total_interactions": total,
+        "positive_feedback": positive,
+        "negative_feedback": negative,
+    }
+
+# First interaction
+log_interaction(
+    prompt="What is our refund policy?",
+    context="Refund policy updated March 2024...",
+    response="Our refund policy allows returns within 30 days.",
+    user_feedback="👍"
+)
+
+# Second interaction
+log_interaction(
+    prompt="What is our shipping policy?",
+    context="Shipping policy updated Jan 2024...",
+    response="We offer standard and express shipping options.",
+    user_feedback="👎"
+)
+
+print(interaction_log)
+print(summarize_log(interaction_log))

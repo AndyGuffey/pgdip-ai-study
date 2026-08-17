@@ -676,6 +676,11 @@ Click a topic to expand it and see the file-by-file details.
   fine-tuning-style response that only changes tone/style (no new facts),
   versus a RAG-style response grounded in a retrieved knowledge-base
   snippet.
+- **[week8_discovery_design_build_3/d3_interaction_feedback_logging_ex4.py](week8_discovery_design_build_3/d3_interaction_feedback_logging_ex4.py)** —
+  Logs each prompt/context/response along with a 👍/👎 user feedback
+  signal, then aggregates the log into a small summary (totals, positive
+  vs. negative counts) — the kind of data a RAG or fine-tuning pipeline
+  would use to spot weak responses.
 
 </details>
 
