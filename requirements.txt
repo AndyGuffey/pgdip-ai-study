@@ -20,8 +20,10 @@ langchain-openai
 openai==2.45.0
 
 # Needed for week4_agents_and_safety/d1_local_llm_injection.py, week2_embeddings_and_generation/d2_constrained_generation_demo.py
-# (local gpt2 model), and week2_embeddings_and_generation/d1_sentiment_model_comparison.py (pretrained
-# sentiment-classification pipelines)
+# (local gpt2 model), week2_embeddings_and_generation/d1_sentiment_model_comparison.py (pretrained
+# sentiment-classification pipelines), and week9_operations_and_scaling/d1_minimal_sft_trainer_ex2.py
+# (Trainer-based fine-tuning demo, which also needs accelerate>=0.26.0 — not included here since
+# the script itself detects and reports its absence)
 transformers==5.12.1
 
 # Needed only for week4_agents_and_safety/d3_multi_agent_demo.py (loads OPENAI_API_KEY from a .env file)
