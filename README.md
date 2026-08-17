@@ -6,8 +6,9 @@ Retrieval-Augmented Generation (RAG), and LLM security.
 Each course week has its own folder (`week2_embeddings_and_generation/`,
 `week3_rag/`, `week4_agents_and_safety/`, `week5_strategy_risk_governance/`,
 `week6_discovery_design_build/`, `week7_discovery_design_build_2/`,
-`week8_discovery_design_build_3/`), and within a folder each file is
-prefixed by the day it covers (`d1_`, `d2_`, ...).
+`week8_discovery_design_build_3/`, `week9_operations_and_scaling/`), and
+within a folder each file is prefixed by the day it covers (`d1_`, `d2_`,
+...).
 
 ## Topics by file
 
@@ -681,6 +682,20 @@ Click a topic to expand it and see the file-by-file details.
   signal, then aggregates the log into a small summary (totals, positive
   vs. negative counts) — the kind of data a RAG or fine-tuning pipeline
   would use to spot weak responses.
+
+</details>
+
+<details>
+<summary><strong>Reward modeling & preference learning</strong></summary>
+
+- **[week9_operations_and_scaling/d1_pairwise_preference_loss_ex1.py](week9_operations_and_scaling/d1_pairwise_preference_loss_ex1.py)** —
+  Toy reward model and Bradley-Terry-style pairwise preference loss: a
+  heuristic keyword scorer stands in for a trained reward model, a sigmoid
+  turns the chosen/rejected score gap into `P(chosen > rejected)`, and a
+  cross-entropy loss is computed from that probability — the same shape
+  DPO-style training builds on, extending the toy update in
+  `week8_discovery_design_build_3/d1_toy_dpo_update_ex7.py`. Also includes
+  a "swap test" showing the loss spike when labels are reversed.
 
 </details>
 
