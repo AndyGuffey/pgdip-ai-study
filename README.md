@@ -6,8 +6,9 @@ Retrieval-Augmented Generation (RAG), and LLM security.
 Each course week has its own folder (`week2_embeddings_and_generation/`,
 `week3_rag/`, `week4_agents_and_safety/`, `week5_strategy_risk_governance/`,
 `week6_discovery_design_build/`, `week7_discovery_design_build_2/`,
-`week8_discovery_design_build_3/`), and within a folder each file is
-prefixed by the day it covers (`d1_`, `d2_`, ...).
+`week8_discovery_design_build_3/`, `week9_operations_and_scaling/`), and
+within a folder each file is prefixed by the day it covers (`d1_`, `d2_`,
+...).
 
 ## Topics by file
 
@@ -684,6 +685,26 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
+<details>
+<summary><strong>Reward modeling & preference learning</strong></summary>
+
+- **[week9_operations_and_scaling/d1_pairwise_preference_loss_ex1.py](week9_operations_and_scaling/d1_pairwise_preference_loss_ex1.py)** —
+  Toy reward model and Bradley-Terry-style pairwise preference loss: a
+  heuristic keyword scorer stands in for a trained reward model, a sigmoid
+  turns the chosen/rejected score gap into `P(chosen > rejected)`, and a
+  cross-entropy loss is computed from that probability — the same shape
+  DPO-style training builds on, extending the toy update in
+  `week8_discovery_design_build_3/d1_toy_dpo_update_ex7.py`. Also includes
+  a "swap test" showing the loss spike when labels are reversed.
+- **[week9_operations_and_scaling/d1_minimal_sft_trainer_ex2.py](week9_operations_and_scaling/d1_minimal_sft_trainer_ex2.py)** —
+  Minimal supervised fine-tuning (SFT) setup: loads `gpt2`, tokenizes a
+  tiny in-memory dataset, and wires up a Hugging Face `Trainer`. Checks
+  for `accelerate` first and only runs `trainer.train()` if it's
+  installed — otherwise it prints the setup pattern and install
+  instructions instead of failing.
+
+</details>
+
 ## Getting started
 
 <details>
@@ -715,7 +736,7 @@ chromadb        # week2_embeddings_and_generation/d4_vector_db_example3.py only
 langchain-openai  # week3_rag/d1_rag_demo.py and week3_rag/d2_rag2_demo.py only
 openai            # week3_rag/d4_demo.py, week4_agents_and_safety/d1_openai_safe.py, week4_agents_and_safety/d2_small_agent.py, week4_agents_and_safety/d2_full_demo.py, week4_agents_and_safety/d3_multi_agent_demo.py, week4_agents_and_safety/d4_toy_calc_tool.py, week4_agents_and_safety/d4_2_tools.py, week4_agents_and_safety/d4_dynamic_tools.py, week4_agents_and_safety/d4_logging_llm_decisions.py, week4_agents_and_safety/d4_full_demo.py, week5_strategy_risk_governance/d2_inference_performance_ex1.py, week5_strategy_risk_governance/d2_inference_performance_ex3.py, week5_strategy_risk_governance/d3_speculative_decoding_openai.py, week6_discovery_design_build/d3_promptlayer_tracing_ex3.py, week6_discovery_design_build/d4_redaction_llm_pipeline_ex3.py, week7_discovery_design_build_2/d4_decision_explanation_ex2.py (uses the OpenAI SDK directly)
 promptlayer       # week6_discovery_design_build/d3_promptlayer_tracing_ex3.py only (wraps the OpenAI client for prompt tracing/observability)
-transformers      # week4_agents_and_safety/d1_local_llm_injection.py only (local gpt2 model)
+transformers      # week4_agents_and_safety/d1_local_llm_injection.py (local gpt2 model) and week9_operations_and_scaling/d1_minimal_sft_trainer_ex2.py (Trainer-based fine-tuning demo, also needs accelerate>=0.26.0)
 python-dotenv     # week4_agents_and_safety/d3_multi_agent_demo.py, week4_agents_and_safety/d4_toy_calc_tool.py, week4_agents_and_safety/d4_2_tools.py, week4_agents_and_safety/d4_dynamic_tools.py, week4_agents_and_safety/d4_full_demo.py, week5_strategy_risk_governance/d2_inference_performance_ex1.py, week5_strategy_risk_governance/d2_inference_performance_ex3.py, week5_strategy_risk_governance/d3_speculative_decoding_openai.py, week6_discovery_design_build/d4_redaction_llm_pipeline_ex3.py, week7_discovery_design_build_2/d4_decision_explanation_ex2.py only (loads OPENAI_API_KEY from a .env file)
 llama-cpp-python  # week5_strategy_risk_governance/d1_example1.py only (runs a local GGUF model via llama.cpp bindings)
 requests          # week5_strategy_risk_governance/d1_example2.py only (calls a local Ollama server's HTTP API)
