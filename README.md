@@ -702,6 +702,13 @@ Click a topic to expand it and see the file-by-file details.
   for `accelerate` first and only runs `trainer.train()` if it's
   installed — otherwise it prints the setup pattern and install
   instructions instead of failing.
+- **[week9_operations_and_scaling/d1_4bit_quantization_config_ex3.py](week9_operations_and_scaling/d1_4bit_quantization_config_ex3.py)** —
+  4-bit (QLoRA-style) quantized model loading via `bitsandbytes`:
+  configures `BitsAndBytesConfig` and loads a model with it. **Note:**
+  this is a snippet, not a runnable script — it references
+  `AutoModelForCausalLM` and `model_name` without defining or importing
+  either; wire those up (e.g. from `d1_minimal_sft_trainer_ex2.py`) and
+  install `bitsandbytes` before running it.
 
 </details>
 
