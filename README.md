@@ -709,6 +709,15 @@ Click a topic to expand it and see the file-by-file details.
   `AutoModelForCausalLM` and `model_name` without defining or importing
   either; wire those up (e.g. from `d1_minimal_sft_trainer_ex2.py`) and
   install `bitsandbytes` before running it.
+- **[week9_operations_and_scaling/d1_lora_finetune_demo_ex4.py](week9_operations_and_scaling/d1_lora_finetune_demo_ex4.py)** —
+  Parameter-efficient fine-tuning (PEFT) via LoRA: wraps `gpt2` in a
+  low-rank adapter (`peft`'s `LoraConfig`/`get_peft_model`), prints the
+  trainable parameter count, then generates from the adapted model — the
+  PEFT counterpart to the full-model SFT approach in
+  `d1_minimal_sft_trainer_ex2.py`. **Note:** `target_modules=["q_proj",
+  "v_proj"]` is a Llama-style naming convention that doesn't match GPT-2's
+  fused `c_attn` attention module, so the adapter likely attaches to
+  nothing as written.
 
 </details>
 
