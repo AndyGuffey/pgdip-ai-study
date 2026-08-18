@@ -696,6 +696,10 @@ Click a topic to expand it and see the file-by-file details.
   DPO-style training builds on, extending the toy update in
   `week8_discovery_design_build_3/d1_toy_dpo_update_ex7.py`. Also includes
   a "swap test" showing the loss spike when labels are reversed.
+- **[week9_operations_and_scaling/d2_pairwise_preference_loss_recap_ex1.py](week9_operations_and_scaling/d2_pairwise_preference_loss_recap_ex1.py)** —
+  Day-2 recap of the file above: same preference dataset, scorer, sigmoid,
+  pairwise loss, and swap test, revisited as reinforcement rather than new
+  material.
 - **[week9_operations_and_scaling/d1_minimal_sft_trainer_ex2.py](week9_operations_and_scaling/d1_minimal_sft_trainer_ex2.py)** —
   Minimal supervised fine-tuning (SFT) setup: loads `gpt2`, tokenizes a
   tiny in-memory dataset, and wires up a Hugging Face `Trainer`. Checks
