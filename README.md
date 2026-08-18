@@ -725,6 +725,12 @@ Click a topic to expand it and see the file-by-file details.
   (`d1_lora_finetune_demo_ex4.py`'s pattern) — this time against a model
   where the `q_proj`/`v_proj` target modules actually match the
   architecture.
+- **[week9_operations_and_scaling/d1_training_data_quality_filter_ex6.py](week9_operations_and_scaling/d1_training_data_quality_filter_ex6.py)** —
+  Quality/safety filter for curating a fine-tuning dataset: rejects
+  samples that are too short, too long, single-token/junk (no spaces), or
+  contain banned words. **Note:** this is a snippet, not a runnable
+  script — it references `train_examples` (a list of `{"input": ...}`
+  dicts) without defining it.
 
 </details>
 
