@@ -718,6 +718,13 @@ Click a topic to expand it and see the file-by-file details.
   "v_proj"]` is a Llama-style naming convention that doesn't match GPT-2's
   fused `c_attn` attention module, so the adapter likely attaches to
   nothing as written.
+- **[week9_operations_and_scaling/d1_qlora_setup_ex5.py](week9_operations_and_scaling/d1_qlora_setup_ex5.py)** —
+  Full QLoRA setup combining the two pieces above: loads a 7B Llama-2
+  model 4-bit quantized (`d1_4bit_quantization_config_ex3.py`'s
+  `BitsAndBytesConfig`) and attaches a LoRA adapter on top
+  (`d1_lora_finetune_demo_ex4.py`'s pattern) — this time against a model
+  where the `q_proj`/`v_proj` target modules actually match the
+  architecture.
 
 </details>
 
