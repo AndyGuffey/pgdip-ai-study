@@ -700,6 +700,16 @@ Click a topic to expand it and see the file-by-file details.
   Day-2 recap of the file above: same preference dataset, scorer, sigmoid,
   pairwise loss, and swap test, revisited as reinforcement rather than new
   material.
+- **[week9_operations_and_scaling/d2_logs_to_preference_pairs_ex2.py](week9_operations_and_scaling/d2_logs_to_preference_pairs_ex2.py)** —
+  Converts raw A/B production logs (two candidate answers plus which one
+  users preferred) into DPO-style `(chosen, rejected)` pairs, then runs
+  the same pairwise scoring/loss as the recap above over the derived
+  pairs, including the "what if labels were wrong" swap check.
+- **[week9_operations_and_scaling/d2_knowledge_distillation_demo_ex4.py](week9_operations_and_scaling/d2_knowledge_distillation_demo_ex4.py)** —
+  Toy knowledge distillation: a "teacher" model's simulated outputs are
+  turned into supervised training data, and a "student" mimics them via
+  nearest word-overlap lookup rather than real fine-tuning — illustrating
+  the teacher-to-student data flow rather than an actual training loop.
 - **[week9_operations_and_scaling/d1_minimal_sft_trainer_ex2.py](week9_operations_and_scaling/d1_minimal_sft_trainer_ex2.py)** —
   Minimal supervised fine-tuning (SFT) setup: loads `gpt2`, tokenizes a
   tiny in-memory dataset, and wires up a Hugging Face `Trainer`. Checks
