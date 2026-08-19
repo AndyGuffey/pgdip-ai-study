@@ -710,6 +710,23 @@ Click a topic to expand it and see the file-by-file details.
   turned into supervised training data, and a "student" mimics them via
   nearest word-overlap lookup rather than real fine-tuning — illustrating
   the teacher-to-student data flow rather than an actual training loop.
+
+</details>
+
+<details>
+<summary><strong>Continual learning & catastrophic forgetting</strong></summary>
+
+- **[week9_operations_and_scaling/d3_replay_buffer_continual_learning_ex1.py](week9_operations_and_scaling/d3_replay_buffer_continual_learning_ex1.py)** —
+  Trains a small neural net on Task A, then on Task B (a shifted input
+  distribution), using a fixed-size replay buffer to rehearse old Task A
+  samples alongside new Task B ones — a standard mitigation for
+  catastrophic forgetting in continual/sequential training.
+
+</details>
+
+<details>
+<summary><strong>Fine-tuning & PEFT infrastructure</strong></summary>
+
 - **[week9_operations_and_scaling/d1_minimal_sft_trainer_ex2.py](week9_operations_and_scaling/d1_minimal_sft_trainer_ex2.py)** —
   Minimal supervised fine-tuning (SFT) setup: loads `gpt2`, tokenizes a
   tiny in-memory dataset, and wires up a Hugging Face `Trainer`. Checks
