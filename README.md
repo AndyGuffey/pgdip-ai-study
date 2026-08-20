@@ -721,6 +721,12 @@ Click a topic to expand it and see the file-by-file details.
   distribution), using a fixed-size replay buffer to rehearse old Task A
   samples alongside new Task B ones — a standard mitigation for
   catastrophic forgetting in continual/sequential training.
+- **[week9_operations_and_scaling/d3_ewc_continual_learning_ex2.py](week9_operations_and_scaling/d3_ewc_continual_learning_ex2.py)** —
+  Elastic Weight Consolidation (EWC): trains on Task A, estimates each
+  parameter's importance via Fisher information, then trains on Task B
+  while penalizing changes to important Task A parameters — a
+  regularization-based alternative to replay for mitigating catastrophic
+  forgetting.
 
 </details>
 
