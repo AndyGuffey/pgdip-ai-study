@@ -731,6 +731,17 @@ Click a topic to expand it and see the file-by-file details.
 </details>
 
 <details>
+<summary><strong>Data drift detection & model adaptation</strong></summary>
+
+- **[week9_operations_and_scaling/d3_drift_detection_adaptation_ex3.py](week9_operations_and_scaling/d3_drift_detection_adaptation_ex3.py)** —
+  Simulates an incoming data stream that drifts partway through, scoring
+  each batch against a baseline distribution via KL divergence; once the
+  drift score crosses a threshold, the model is fine-tuned on the new data
+  to adapt to the shift.
+
+</details>
+
+<details>
 <summary><strong>Fine-tuning & PEFT infrastructure</strong></summary>
 
 - **[week9_operations_and_scaling/d1_minimal_sft_trainer_ex2.py](week9_operations_and_scaling/d1_minimal_sft_trainer_ex2.py)** —
