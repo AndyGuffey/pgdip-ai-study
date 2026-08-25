@@ -748,6 +748,11 @@ Click a topic to expand it and see the file-by-file details.
   Wraps a simulated model call with a unique trace ID, latency timing, and a
   structured log record (prompt, response, tokens used, status) — the basic
   shape of a trace log for monitoring AI requests in production.
+- **[week9_operations_and_scaling/d4_continuous_feedback_loop_ex2.py](week9_operations_and_scaling/d4_continuous_feedback_loop_ex2.py)** —
+  Simulates a model responding to queries, deriving binary feedback from
+  response quality, and nudging a running "knowledge score" up or down based
+  on that feedback — the basic shape of an online learning/feedback loop for
+  monitoring and adapting a model's quality over repeated interactions.
 
 </details>
 
