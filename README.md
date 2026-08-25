@@ -742,6 +742,16 @@ Click a topic to expand it and see the file-by-file details.
 </details>
 
 <details>
+<summary><strong>Production request tracing & monitoring</strong></summary>
+
+- **[week9_operations_and_scaling/d4_request_tracing_ex1.py](week9_operations_and_scaling/d4_request_tracing_ex1.py)** —
+  Wraps a simulated model call with a unique trace ID, latency timing, and a
+  structured log record (prompt, response, tokens used, status) — the basic
+  shape of a trace log for monitoring AI requests in production.
+
+</details>
+
+<details>
 <summary><strong>Fine-tuning & PEFT infrastructure</strong></summary>
 
 - **[week9_operations_and_scaling/d1_minimal_sft_trainer_ex2.py](week9_operations_and_scaling/d1_minimal_sft_trainer_ex2.py)** —
