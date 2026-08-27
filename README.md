@@ -738,6 +738,11 @@ Click a topic to expand it and see the file-by-file details.
   each batch against a baseline distribution via KL divergence; once the
   drift score crosses a threshold, the model is fine-tuned on the new data
   to adapt to the shift.
+- **[week9_operations_and_scaling/d4_human_in_the_loop_drift_review_ex3.py](week9_operations_and_scaling/d4_human_in_the_loop_drift_review_ex3.py)** —
+  Builds on the drift detection above with a human-in-the-loop safeguard:
+  crossing a lower KL-divergence threshold raises an alert, and crossing a
+  higher one routes the decision to a simulated human reviewer who must
+  approve before the model is adapted, rather than adapting automatically.
 
 </details>
 
