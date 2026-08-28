@@ -6,7 +6,8 @@ Retrieval-Augmented Generation (RAG), and LLM security.
 Each course week has its own folder (`week2_embeddings_and_generation/`,
 `week3_rag/`, `week4_agents_and_safety/`, `week5_strategy_risk_governance/`,
 `week6_discovery_design_build/`, `week7_discovery_design_build_2/`,
-`week8_discovery_design_build_3/`, `week9_operations_and_scaling/`), and
+`week8_discovery_design_build_3/`, `week9_operations_and_scaling/`,
+`week10_operations_scaling/`), and
 within a folder each file is prefixed by the day it covers (`d1_`, `d2_`,
 ...).
 
@@ -807,6 +808,17 @@ Click a topic to expand it and see the file-by-file details.
   a setup/wiring demo, not meant to run training itself. Requires
   `evaluate` (not yet in `requirements.txt` — install with
   `./.venv/bin/pip install evaluate`).
+
+</details>
+
+<details>
+<summary><strong>Token cost estimation & optimization</strong></summary>
+
+- **[week10_operations_scaling/d1_token_cost_estimation_ex1.py](week10_operations_scaling/d1_token_cost_estimation_ex1.py)** —
+  Uses `tiktoken` to count exact tokens for a model, estimates $ cost per
+  request from a per-1K-token price, and applies a simple optimization
+  (truncating prompt/response to a token cap) to show the resulting token
+  and cost savings.
 
 </details>
 
