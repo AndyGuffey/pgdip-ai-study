@@ -44,3 +44,6 @@ llama-cpp-python
 # Needed only for week5_strategy_risk_governance/d1_example2.py (calls a
 # local Ollama server's HTTP API)
 requests
+
+# Needed only for week10_operations_scaling/d1_token_cost_estimation_ex1.py
+tiktoken==0.14.0
