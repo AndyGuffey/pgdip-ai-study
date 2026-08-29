@@ -819,6 +819,11 @@ Click a topic to expand it and see the file-by-file details.
   request from a per-1K-token price, and applies a simple optimization
   (truncating prompt/response to a token cap) to show the resulting token
   and cost savings.
+- **[week10_operations_scaling/d1_caching_token_budget_ex2.py](week10_operations_scaling/d1_caching_token_budget_ex2.py)** —
+  Caches responses by prompt to avoid repeat model calls, and rejects any
+  request whose (rough, word-count) token estimate exceeds a fixed budget —
+  two simple cost-control mechanisms for AI request handling, demonstrated
+  over a mix of repeated and novel queries.
 
 </details>
 
