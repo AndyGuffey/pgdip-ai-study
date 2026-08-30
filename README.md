@@ -812,7 +812,7 @@ Click a topic to expand it and see the file-by-file details.
 </details>
 
 <details>
-<summary><strong>Token cost estimation & optimization</strong></summary>
+<summary><strong>Cost control, caching & rate limiting</strong></summary>
 
 - **[week10_operations_scaling/d1_token_cost_estimation_ex1.py](week10_operations_scaling/d1_token_cost_estimation_ex1.py)** —
   Uses `tiktoken` to count exact tokens for a model, estimates $ cost per
@@ -824,6 +824,11 @@ Click a topic to expand it and see the file-by-file details.
   request whose (rough, word-count) token estimate exceeds a fixed budget —
   two simple cost-control mechanisms for AI request handling, demonstrated
   over a mix of repeated and novel queries.
+- **[week10_operations_scaling/d1_rate_limiting_ex3.py](week10_operations_scaling/d1_rate_limiting_ex3.py)** —
+  Tracks each user's recent request timestamps in a sliding time window and
+  throttles (with a backoff sleep) once they exceed a fixed request count
+  within that window — a basic rate-limiting pattern for AI request
+  handling.
 
 </details>
 
