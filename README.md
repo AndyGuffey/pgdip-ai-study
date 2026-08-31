@@ -832,6 +832,16 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
+<details>
+<summary><strong>SLO monitoring & reliability</strong></summary>
+
+- **[week10_operations_scaling/d2_slo_monitoring_ex1.py](week10_operations_scaling/d2_slo_monitoring_ex1.py)** —
+  Simulates a stream of requests with random latency/success outcomes,
+  tracks running average latency and uptime, and flags an SLO violation
+  whenever either metric crosses its target threshold.
+
+</details>
+
 ## Getting started
 
 <details>
