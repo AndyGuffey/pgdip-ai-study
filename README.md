@@ -839,6 +839,10 @@ Click a topic to expand it and see the file-by-file details.
   Simulates a stream of requests with random latency/success outcomes,
   tracks running average latency and uptime, and flags an SLO violation
   whenever either metric crosses its target threshold.
+- **[week10_operations_scaling/d2_incident_response_runbook_ex2.py](week10_operations_scaling/d2_incident_response_runbook_ex2.py)** —
+  Simulates system health checks (latency, error rate); when either crosses
+  an alert threshold it runs a fixed remediation runbook, then escalates to
+  a senior engineer if the incident isn't resolved.
 
 </details>
 
