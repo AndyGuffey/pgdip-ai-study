@@ -843,6 +843,11 @@ Click a topic to expand it and see the file-by-file details.
   Simulates system health checks (latency, error rate); when either crosses
   an alert threshold it runs a fixed remediation runbook, then escalates to
   a senior engineer if the incident isn't resolved.
+- **[week10_operations_scaling/d2_incident_severity_classification_ex3.py](week10_operations_scaling/d2_incident_severity_classification_ex3.py)** —
+  Builds on the basic runbook pattern: classifies each detected incident
+  into a severity tier (MINOR/MAJOR/CRITICAL) based on latency and error
+  signals, applies a severity-appropriate recovery action, then runs a
+  post-recovery health check to confirm the system actually recovered.
 
 </details>
 
