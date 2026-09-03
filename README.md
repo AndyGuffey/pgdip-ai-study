@@ -851,6 +851,17 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
+<details>
+<summary><strong>Edge/cloud request routing</strong></summary>
+
+- **[week10_operations_scaling/d3_edge_cloud_routing_ex1.py](week10_operations_scaling/d3_edge_cloud_routing_ex1.py)** —
+  Routes short prompts to a fast, free "edge" template answer and longer
+  ones to a real OpenAI cloud call — a simple cost-aware routing pattern
+  that avoids paying for cloud inference on trivial requests. Requires an
+  OpenAI API key.
+
+</details>
+
 ## Getting started
 
 <details>
