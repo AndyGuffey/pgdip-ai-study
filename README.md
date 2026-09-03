@@ -852,13 +852,18 @@ Click a topic to expand it and see the file-by-file details.
 </details>
 
 <details>
-<summary><strong>Edge/cloud request routing</strong></summary>
+<summary><strong>Cost-aware model & request routing</strong></summary>
 
 - **[week10_operations_scaling/d3_edge_cloud_routing_ex1.py](week10_operations_scaling/d3_edge_cloud_routing_ex1.py)** —
   Routes short prompts to a fast, free "edge" template answer and longer
   ones to a real OpenAI cloud call — a simple cost-aware routing pattern
   that avoids paying for cloud inference on trivial requests. Requires an
   OpenAI API key.
+- **[week10_operations_scaling/d3_multimodal_routing_ex2.py](week10_operations_scaling/d3_multimodal_routing_ex2.py)** —
+  Routes plain text prompts to a cheaper text-only model (`gpt-4o-mini`)
+  and image inputs to a vision-capable model (`gpt-4o`) — a routing
+  pattern that picks the cheapest model capable of handling each request's
+  input type. Requires an OpenAI API key.
 
 </details>
 
