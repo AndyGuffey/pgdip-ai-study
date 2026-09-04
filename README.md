@@ -867,6 +867,16 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
+<details>
+<summary><strong>AI governance: risk-tiered human review</strong></summary>
+
+- **[week10_operations_scaling/d3_risk_tiered_governance_ex3.py](week10_operations_scaling/d3_risk_tiered_governance_ex3.py)** —
+  Classifies each task as high- or low-risk, audit-logs every decision, and
+  routes high-risk outputs (e.g. credit decisions, medical advice) through
+  a simulated human review step before they're returned.
+
+</details>
+
 ## Getting started
 
 <details>
