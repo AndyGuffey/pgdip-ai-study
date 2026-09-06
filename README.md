@@ -11,11 +11,63 @@ Each course week has its own folder (`week2_embeddings_and_generation/`,
 within a folder each file is prefixed by the day it covers (`d1_`, `d2_`,
 ...).
 
+## Table of contents
+
+**Topics by file**
+
+- [Model evaluation & benchmarking](#model-evaluation-benchmarking)
+- [Constrained generation / decoding controls](#constrained-generation-decoding-controls)
+- [Structured output validation & repair](#structured-output-validation-repair)
+- [Chunking & embeddings](#chunking-embeddings)
+- [Vector databases](#vector-databases)
+- [RAG basics (RAG 1.0)](#rag-basics-rag-10)
+- [Hybrid retrieval (RAG 2.0)](#hybrid-retrieval-rag-20)
+- [Reranking & graph retrieval (RAG 3.0)](#reranking-graph-retrieval-rag-30)
+- [Confidence-gated RAG with citations (RAG 4.0)](#confidence-gated-rag-with-citations-rag-40)
+- [LLM security: prompt injection & fuzzing](#llm-security-prompt-injection-fuzzing)
+- [Agents: plan → act → check](#agents-plan-act-check)
+- [Multi-agent orchestration](#multi-agent-orchestration)
+- [OpenAI function/tool calling](#openai-functiontool-calling)
+- [Agent observability & tracing](#agent-observability-tracing)
+- [Local LLM inference](#local-llm-inference)
+- [Inference performance measurement](#inference-performance-measurement)
+- [KV cache, paged attention & speculative decoding](#kv-cache-paged-attention-speculative-decoding)
+- [Cost-aware & resilient model serving](#cost-aware-resilient-model-serving)
+- [Agent memory patterns](#agent-memory-patterns)
+- [ML ops: reproducibility, versioning & regression testing](#ml-ops-reproducibility-versioning-regression-testing)
+- [LLM output validation, tracing & A/B testing](#llm-output-validation-tracing-ab-testing)
+- [Sensitive data classification & redaction](#sensitive-data-classification-redaction)
+- [AI risk classification & change auditing](#ai-risk-classification-change-auditing)
+- [Content fingerprinting, watermarking & provenance](#content-fingerprinting-watermarking-provenance)
+- [Bias & fairness metrics](#bias-fairness-metrics)
+- [Model explainability](#model-explainability)
+- [LLM safety baselines: naive vs. guardrailed compliance](#llm-safety-baselines-naive-vs-guardrailed-compliance)
+- [Preference optimization (DPO)](#preference-optimization-dpo)
+- [Enterprise integration & API security for LLM services](#enterprise-integration-api-security-for-llm-services)
+- [Dataset loading & preparation](#dataset-loading-preparation)
+- [Fine-tuning vs. RAG](#fine-tuning-vs-rag)
+- [Reward modeling & preference learning](#reward-modeling-preference-learning)
+- [Continual learning & catastrophic forgetting](#continual-learning-catastrophic-forgetting)
+- [Data drift detection & model adaptation](#data-drift-detection-model-adaptation)
+- [Production request tracing & monitoring](#production-request-tracing-monitoring)
+- [Fine-tuning & PEFT infrastructure](#fine-tuning-peft-infrastructure)
+- [Cost control, caching & rate limiting](#cost-control-caching-rate-limiting)
+- [SLO monitoring & reliability](#slo-monitoring-reliability)
+- [Cost-aware model & request routing](#cost-aware-model-request-routing)
+- [AI governance: risk-tiered human review](#ai-governance-risk-tiered-human-review)
+
+**Getting started**
+
+- [Setup](#setup)
+- [API keys](#api-keys)
+- [Running a script](#running-a-script)
+- [AI usage declaration](#ai-usage-declaration)
+
 ## Topics by file
 
 Click a topic to expand it and see the file-by-file details.
 
-<details>
+<details id="model-evaluation-benchmarking">
 <summary><strong>Model evaluation & benchmarking</strong></summary>
 
 - **[week2_embeddings_and_generation/d1_sentiment_model_comparison.py](week2_embeddings_and_generation/d1_sentiment_model_comparison.py)**
@@ -26,7 +78,7 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
-<details>
+<details id="constrained-generation-decoding-controls">
 <summary><strong>Constrained generation / decoding controls</strong></summary>
 
 - **[week2_embeddings_and_generation/d2_constrained_generation_demo.py](week2_embeddings_and_generation/d2_constrained_generation_demo.py)**
@@ -40,7 +92,7 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
-<details>
+<details id="structured-output-validation-repair">
 <summary><strong>Structured output validation & repair</strong></summary>
 
 - **[week2_embeddings_and_generation/d2_json_schema_validation.py](week2_embeddings_and_generation/d2_json_schema_validation.py)** —
@@ -55,7 +107,7 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
-<details>
+<details id="chunking-embeddings">
 <summary><strong>Chunking & embeddings</strong></summary>
 
 - **[week2_embeddings_and_generation/d3_embedding_similarity.py](week2_embeddings_and_generation/d3_embedding_similarity.py)** —
@@ -71,7 +123,7 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
-<details>
+<details id="vector-databases">
 <summary><strong>Vector databases</strong></summary>
 
 - **[week2_embeddings_and_generation/d4_vector_db_example3.py](week2_embeddings_and_generation/d4_vector_db_example3.py)** — Using
@@ -82,7 +134,7 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
-<details>
+<details id="rag-basics-rag-10">
 <summary><strong>RAG basics (RAG 1.0)</strong></summary>
 
 - **[week3_rag/d1_rag_example_1.py](week3_rag/d1_rag_example_1.py)** — Minimal RAG example:
@@ -95,7 +147,7 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
-<details>
+<details id="hybrid-retrieval-rag-20">
 <summary><strong>Hybrid retrieval (RAG 2.0)</strong></summary>
 
 - **[week3_rag/d2_rag2_demo.py](week3_rag/d2_rag2_demo.py)** — Combines sparse keyword
@@ -106,7 +158,7 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
-<details>
+<details id="reranking-graph-retrieval-rag-30">
 <summary><strong>Reranking & graph retrieval (RAG 3.0)</strong></summary>
 
 - **[week3_rag/d3_rag3_reranking_ex.py](week3_rag/d3_rag3_reranking_ex.py)** — Smallest
@@ -124,7 +176,7 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
-<details>
+<details id="confidence-gated-rag-with-citations-rag-40">
 <summary><strong>Confidence-gated RAG with citations (RAG 4.0)</strong></summary>
 
 - **[week3_rag/d4_confidence_ex1.py](week3_rag/d4_confidence_ex1.py)** — Smallest possible
@@ -143,7 +195,7 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
-<details>
+<details id="llm-security-prompt-injection-fuzzing">
 <summary><strong>LLM security: prompt injection & fuzzing</strong></summary>
 
 - **[week4_agents_and_safety/d1_local_llm_injection.py](week4_agents_and_safety/d1_local_llm_injection.py)** —
@@ -171,7 +223,7 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
-<details>
+<details id="agents-plan-act-check">
 <summary><strong>Agents: plan → act → check</strong></summary>
 
 - **[week4_agents_and_safety/d2_example1.py](week4_agents_and_safety/d2_example1.py)** — Smallest possible example of
@@ -199,7 +251,7 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
-<details>
+<details id="multi-agent-orchestration">
 <summary><strong>Multi-agent orchestration</strong></summary>
 
 - **[week4_agents_and_safety/d3_message_passing.py](week4_agents_and_safety/d3_message_passing.py)** — Smallest
@@ -230,7 +282,7 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
-<details>
+<details id="openai-functiontool-calling">
 <summary><strong>OpenAI function/tool calling</strong></summary>
 
 - **[week4_agents_and_safety/d4_open_ai_fun_call.py](week4_agents_and_safety/d4_open_ai_fun_call.py)** — Just the
@@ -261,7 +313,7 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
-<details>
+<details id="agent-observability-tracing">
 <summary><strong>Agent observability & tracing</strong></summary>
 
 - **[week4_agents_and_safety/d4_real_trace_example.py](week4_agents_and_safety/d4_real_trace_example.py)** — Not a
@@ -294,7 +346,7 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
-<details>
+<details id="local-llm-inference">
 <summary><strong>Local LLM inference</strong></summary>
 
 - **[week5_strategy_risk_governance/d1_example1.py](week5_strategy_risk_governance/d1_example1.py)** —
@@ -313,7 +365,7 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
-<details>
+<details id="inference-performance-measurement">
 <summary><strong>Inference performance measurement</strong></summary>
 
 - **[week5_strategy_risk_governance/d2_inference_performance_ex1.py](week5_strategy_risk_governance/d2_inference_performance_ex1.py)**
@@ -334,7 +386,7 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
-<details>
+<details id="kv-cache-paged-attention-speculative-decoding">
 <summary><strong>KV cache, paged attention & speculative decoding</strong></summary>
 
 - **[week5_strategy_risk_governance/d3_kv_cache_memory_calc.py](week5_strategy_risk_governance/d3_kv_cache_memory_calc.py)** —
@@ -362,7 +414,7 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
-<details>
+<details id="cost-aware-resilient-model-serving">
 <summary><strong>Cost-aware & resilient model serving</strong></summary>
 
 - **[week5_strategy_risk_governance/d4_model_serve_ex1.py](week5_strategy_risk_governance/d4_model_serve_ex1.py)** —
@@ -379,7 +431,7 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
-<details>
+<details id="agent-memory-patterns">
 <summary><strong>Agent memory patterns</strong></summary>
 
 - **[week6_discovery_design_build/d1_memory_types_ex1.py](week6_discovery_design_build/d1_memory_types_ex1.py)** —
@@ -398,7 +450,7 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
-<details>
+<details id="ml-ops-reproducibility-versioning-regression-testing">
 <summary><strong>ML ops: reproducibility, versioning & regression testing</strong></summary>
 
 - **[week6_discovery_design_build/d2_reproducibility_ex1.py](week6_discovery_design_build/d2_reproducibility_ex1.py)** —
@@ -430,7 +482,7 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
-<details>
+<details id="llm-output-validation-tracing-ab-testing">
 <summary><strong>LLM output validation, tracing & A/B testing</strong></summary>
 
 - **[week6_discovery_design_build/d3_output_validation_ex1.py](week6_discovery_design_build/d3_output_validation_ex1.py)** —
@@ -453,7 +505,7 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
-<details>
+<details id="sensitive-data-classification-redaction">
 <summary><strong>Sensitive data classification & redaction</strong></summary>
 
 - **[week6_discovery_design_build/d4_sensitive_data_classification_ex1.py](week6_discovery_design_build/d4_sensitive_data_classification_ex1.py)** —
@@ -474,7 +526,7 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
-<details>
+<details id="ai-risk-classification-change-auditing">
 <summary><strong>AI risk classification & change auditing</strong></summary>
 
 - **[week7_discovery_design_build_2/d1_risk_classification_ex1.py](week7_discovery_design_build_2/d1_risk_classification_ex1.py)** —
@@ -493,7 +545,7 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
-<details>
+<details id="content-fingerprinting-watermarking-provenance">
 <summary><strong>Content fingerprinting, watermarking & provenance</strong></summary>
 
 - **[week7_discovery_design_build_2/d2_content_fingerprint_ex1.py](week7_discovery_design_build_2/d2_content_fingerprint_ex1.py)** —
@@ -525,7 +577,7 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
-<details>
+<details id="bias-fairness-metrics">
 <summary><strong>Bias & fairness metrics</strong></summary>
 
 - **[week7_discovery_design_build_2/d3_disparity_ratio_ex1.py](week7_discovery_design_build_2/d3_disparity_ratio_ex1.py)** —
@@ -546,7 +598,7 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
-<details>
+<details id="model-explainability">
 <summary><strong>Model explainability</strong></summary>
 
 - **[week7_discovery_design_build_2/d4_feature_correlation_ex1.py](week7_discovery_design_build_2/d4_feature_correlation_ex1.py)** —
@@ -568,7 +620,7 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
-<details>
+<details id="llm-safety-baselines-naive-vs-guardrailed-compliance">
 <summary><strong>LLM safety baselines: naive vs. guardrailed compliance</strong></summary>
 
 - **[week8_discovery_design_build_3/d1_naive_compliant_model_ex1.py](week8_discovery_design_build_3/d1_naive_compliant_model_ex1.py)** —
@@ -603,7 +655,7 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
-<details>
+<details id="preference-optimization-dpo">
 <summary><strong>Preference optimization (DPO)</strong></summary>
 
 - **[week8_discovery_design_build_3/d1_toy_dpo_update_ex7.py](week8_discovery_design_build_3/d1_toy_dpo_update_ex7.py)** —
@@ -616,7 +668,7 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
-<details>
+<details id="enterprise-integration-api-security-for-llm-services">
 <summary><strong>Enterprise integration & API security for LLM services</strong></summary>
 
 - **[week8_discovery_design_build_3/d2_api_key_auth_ex1.py](week8_discovery_design_build_3/d2_api_key_auth_ex1.py)** —
@@ -655,7 +707,7 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
-<details>
+<details id="dataset-loading-preparation">
 <summary><strong>Dataset loading & preparation</strong></summary>
 
 - **[week8_discovery_design_build_3/d3_dataset_sample_loading_ex1.py](week8_discovery_design_build_3/d3_dataset_sample_loading_ex1.py)** —
@@ -670,7 +722,7 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
-<details>
+<details id="fine-tuning-vs-rag">
 <summary><strong>Fine-tuning vs. RAG</strong></summary>
 
 - **[week8_discovery_design_build_3/d3_finetune_vs_rag_comparison_ex3.py](week8_discovery_design_build_3/d3_finetune_vs_rag_comparison_ex3.py)** —
@@ -686,7 +738,7 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
-<details>
+<details id="reward-modeling-preference-learning">
 <summary><strong>Reward modeling & preference learning</strong></summary>
 
 - **[week9_operations_and_scaling/d1_pairwise_preference_loss_ex1.py](week9_operations_and_scaling/d1_pairwise_preference_loss_ex1.py)** —
@@ -714,7 +766,7 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
-<details>
+<details id="continual-learning-catastrophic-forgetting">
 <summary><strong>Continual learning & catastrophic forgetting</strong></summary>
 
 - **[week9_operations_and_scaling/d3_replay_buffer_continual_learning_ex1.py](week9_operations_and_scaling/d3_replay_buffer_continual_learning_ex1.py)** —
@@ -731,7 +783,7 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
-<details>
+<details id="data-drift-detection-model-adaptation">
 <summary><strong>Data drift detection & model adaptation</strong></summary>
 
 - **[week9_operations_and_scaling/d3_drift_detection_adaptation_ex3.py](week9_operations_and_scaling/d3_drift_detection_adaptation_ex3.py)** —
@@ -747,7 +799,7 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
-<details>
+<details id="production-request-tracing-monitoring">
 <summary><strong>Production request tracing & monitoring</strong></summary>
 
 - **[week9_operations_and_scaling/d4_request_tracing_ex1.py](week9_operations_and_scaling/d4_request_tracing_ex1.py)** —
@@ -762,7 +814,7 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
-<details>
+<details id="fine-tuning-peft-infrastructure">
 <summary><strong>Fine-tuning & PEFT infrastructure</strong></summary>
 
 - **[week9_operations_and_scaling/d1_minimal_sft_trainer_ex2.py](week9_operations_and_scaling/d1_minimal_sft_trainer_ex2.py)** —
@@ -811,7 +863,7 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
-<details>
+<details id="cost-control-caching-rate-limiting">
 <summary><strong>Cost control, caching & rate limiting</strong></summary>
 
 - **[week10_operations_scaling/d1_token_cost_estimation_ex1.py](week10_operations_scaling/d1_token_cost_estimation_ex1.py)** —
@@ -832,7 +884,7 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
-<details>
+<details id="slo-monitoring-reliability">
 <summary><strong>SLO monitoring & reliability</strong></summary>
 
 - **[week10_operations_scaling/d2_slo_monitoring_ex1.py](week10_operations_scaling/d2_slo_monitoring_ex1.py)** —
@@ -851,7 +903,7 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
-<details>
+<details id="cost-aware-model-request-routing">
 <summary><strong>Cost-aware model & request routing</strong></summary>
 
 - **[week10_operations_scaling/d3_edge_cloud_routing_ex1.py](week10_operations_scaling/d3_edge_cloud_routing_ex1.py)** —
@@ -867,7 +919,7 @@ Click a topic to expand it and see the file-by-file details.
 
 </details>
 
-<details>
+<details id="ai-governance-risk-tiered-human-review">
 <summary><strong>AI governance: risk-tiered human review</strong></summary>
 
 - **[week10_operations_scaling/d3_risk_tiered_governance_ex3.py](week10_operations_scaling/d3_risk_tiered_governance_ex3.py)** —
@@ -879,7 +931,7 @@ Click a topic to expand it and see the file-by-file details.
 
 ## Getting started
 
-<details>
+<details id="setup">
 <summary><strong>Setup</strong></summary>
 
 A virtual environment is already set up in `.venv`. To install/update
@@ -917,7 +969,7 @@ datasets          # week2_embeddings_and_generation/d1_sentiment_model_compariso
 
 </details>
 
-<details>
+<details id="api-keys">
 <summary><strong>API keys</strong></summary>
 
 `week3_rag/d1_rag_demo.py`, `week3_rag/d2_rag2_demo.py`, `week3_rag/d4_demo.py`,
