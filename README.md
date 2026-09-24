@@ -3,13 +3,9 @@
 Running collection of study scripts exploring vector search, embeddings,
 Retrieval-Augmented Generation (RAG), and LLM security.
 
-Each course week has its own folder (`week2_embeddings_and_generation/`,
-`week3_rag/`, `week4_agents_and_safety/`, `week5_strategy_risk_governance/`,
-`week6_discovery_design_build/`, `week7_discovery_design_build_2/`,
-`week8_discovery_design_build_3/`, `week9_operations_and_scaling/`,
-`week10_operations_scaling/`), and
-within a folder each file is prefixed by the day it covers (`d1_`, `d2_`,
-...).
+Each course week has its own `weekN_topic/` folder (e.g.
+`week3_rag/`, `week10_operations_scaling/`), and within a folder each
+file is prefixed by the day it covers (`d1_`, `d2_`, ...).
 
 ## Table of contents
 
