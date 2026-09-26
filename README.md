@@ -9,55 +9,34 @@ file is prefixed by the day it covers (`d1_`, `d2_`, ...).
 
 ## Table of contents
 
-**Topics by file**
+- [Getting started](#getting-started)
+  - [Setup](#setup)
+  - [API keys](#api-keys)
+  - [Running a script](#running-a-script)
+  - [AI usage declaration](#ai-usage-declaration)
+- [Week-by-week folders](#week-by-week-folders)
+  - [Week 2 — Embeddings and generation](week2_embeddings_and_generation/)
+  - [Week 3 — RAG](week3_rag/)
+  - [Week 4 — Agents and safety](week4_agents_and_safety/)
+  - [Week 5 — Strategy, risk, and governance](week5_strategy_risk_governance/)
+  - [Week 6 — Discovery, design, and build](week6_discovery_design_build/)
+  - [Week 7 — Discovery, design, and build (part 2)](week7_discovery_design_build_2/)
+  - [Week 8 — Discovery, design, and build (part 3)](week8_discovery_design_build_3/)
+  - [Week 9 — Operations and scaling](week9_operations_and_scaling/)
+  - [Week 10 — Operations and scaling](week10_operations_scaling/)
+- [Topics by file](#topics-by-file)
 
-- [Model evaluation & benchmarking](#model-evaluation-benchmarking)
-- [Constrained generation / decoding controls](#constrained-generation-decoding-controls)
-- [Structured output validation & repair](#structured-output-validation-repair)
-- [Chunking & embeddings](#chunking-embeddings)
-- [Vector databases](#vector-databases)
-- [RAG basics (RAG 1.0)](#rag-basics-rag-10)
-- [Hybrid retrieval (RAG 2.0)](#hybrid-retrieval-rag-20)
-- [Reranking & graph retrieval (RAG 3.0)](#reranking-graph-retrieval-rag-30)
-- [Confidence-gated RAG with citations (RAG 4.0)](#confidence-gated-rag-with-citations-rag-40)
-- [LLM security: prompt injection & fuzzing](#llm-security-prompt-injection-fuzzing)
-- [Agents: plan → act → check](#agents-plan-act-check)
-- [Multi-agent orchestration](#multi-agent-orchestration)
-- [OpenAI function/tool calling](#openai-functiontool-calling)
-- [Agent observability & tracing](#agent-observability-tracing)
-- [Local LLM inference](#local-llm-inference)
-- [Inference performance measurement](#inference-performance-measurement)
-- [KV cache, paged attention & speculative decoding](#kv-cache-paged-attention-speculative-decoding)
-- [Cost-aware & resilient model serving](#cost-aware-resilient-model-serving)
-- [Agent memory patterns](#agent-memory-patterns)
-- [ML ops: reproducibility, versioning & regression testing](#ml-ops-reproducibility-versioning-regression-testing)
-- [LLM output validation, tracing & A/B testing](#llm-output-validation-tracing-ab-testing)
-- [Sensitive data classification & redaction](#sensitive-data-classification-redaction)
-- [AI risk classification & change auditing](#ai-risk-classification-change-auditing)
-- [Content fingerprinting, watermarking & provenance](#content-fingerprinting-watermarking-provenance)
-- [Bias & fairness metrics](#bias-fairness-metrics)
-- [Model explainability](#model-explainability)
-- [LLM safety baselines: naive vs. guardrailed compliance](#llm-safety-baselines-naive-vs-guardrailed-compliance)
-- [Preference optimization (DPO)](#preference-optimization-dpo)
-- [Enterprise integration & API security for LLM services](#enterprise-integration-api-security-for-llm-services)
-- [Dataset loading & preparation](#dataset-loading-preparation)
-- [Fine-tuning vs. RAG](#fine-tuning-vs-rag)
-- [Reward modeling & preference learning](#reward-modeling-preference-learning)
-- [Continual learning & catastrophic forgetting](#continual-learning-catastrophic-forgetting)
-- [Data drift detection & model adaptation](#data-drift-detection-model-adaptation)
-- [Production request tracing & monitoring](#production-request-tracing-monitoring)
-- [Fine-tuning & PEFT infrastructure](#fine-tuning-peft-infrastructure)
-- [Cost control, caching & rate limiting](#cost-control-caching-rate-limiting)
-- [SLO monitoring & reliability](#slo-monitoring-reliability)
-- [Cost-aware model & request routing](#cost-aware-model-request-routing)
-- [AI governance: risk-tiered human review](#ai-governance-risk-tiered-human-review)
+## Week-by-week folders
 
-**Getting started**
-
-- [Setup](#setup)
-- [API keys](#api-keys)
-- [Running a script](#running-a-script)
-- [AI usage declaration](#ai-usage-declaration)
+- [week2_embeddings_and_generation/](week2_embeddings_and_generation/) — Embeddings and generation
+- [week3_rag/](week3_rag/) — Retrieval-augmented generation (RAG)
+- [week4_agents_and_safety/](week4_agents_and_safety/) — Agents, tools, and safety
+- [week5_strategy_risk_governance/](week5_strategy_risk_governance/) — Strategy, risk, and governance
+- [week6_discovery_design_build/](week6_discovery_design_build/) — Discovery, design, and build
+- [week7_discovery_design_build_2/](week7_discovery_design_build_2/) — Discovery, design, and build (part 2)
+- [week8_discovery_design_build_3/](week8_discovery_design_build_3/) — Discovery, design, and build (part 3)
+- [week9_operations_and_scaling/](week9_operations_and_scaling/) — Operations and scaling
+- [week10_operations_scaling/](week10_operations_scaling/) — Operations and scaling
 
 ## Topics by file
 
